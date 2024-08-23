@@ -1,10 +1,9 @@
 let canvas = document.getElementById("c");
 let ctx = canvas.getContext("2d");
-let width = document.body.clientWidth;
-let height = document.body.clientHeight;
+let width = window.innerWidth;
+let height = window.innerHeight;
 canvas.width = width;
 canvas.height = height;
-let nav = document.getElementsByTagName("nav")[0].offsetHeight;
 
 let NUM_PARTICLES = 700;
 if (width > 1200) NUM_PARTICLES = 1000;
@@ -15,7 +14,8 @@ let mouse = new Point(0, 0).setForceAcc(-30).setRadius(100);
 let mBehavior = 2;
 window.addEventListener("mousemove", (e) => {
   if (e.altKey) addParticles(e.offsetX, e.offsetY);
-  mouse.pos.setXY(e.offsetX, e.offsetY - nav);
+
+  mouse.pos.setXY(e.clientX, e.clientY);
 });
 
 window.addEventListener("mousedown", () => (mBehavior = -5));

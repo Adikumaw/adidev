@@ -441,7 +441,7 @@
           (this.gravity = new Vector(0, 1)),
           (this.pinned = !1),
           (this.radius = o || 5),
-          (this.color = "#6B2F81"),
+          (this.color = "#03dac6"),
           (this.mass = 1),
           (this.sticks = []),
           (this.forceAcc = 1),
