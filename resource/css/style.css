@@ -74,17 +74,6 @@ canvas {
   width: 100%;
 }
 
-/* .navbar::after {
-  content: "";
-  position: absolute;
-  display: block;
-  top: calc(4rem - 2px);
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background-color: #a24dbf;
-} */
-
 .navbar__container {
   display: flex;
   justify-content: space-between;
