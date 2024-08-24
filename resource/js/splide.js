@@ -2,9 +2,8 @@ document.addEventListener("DOMContentLoaded", function () {
   new Splide("#js-splide", {
     perPage: 3,
     perMove: 1,
-    arrows: true,
+    arrows: false,
     focus: "center",
-    pagination: false,
     cover: true,
     type: "loop",
     breakpoints: {

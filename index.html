@@ -13,191 +13,211 @@
 </head>
 
 <body>
-
     <canvas id="2dcanvas"></canvas>
     <nav class="navbar">
-        <img class="navbar__logo"
-             src="resource/img/logo.png"
-             alt="logo">
-        <ul class="navbar__list">
-            <li class="navbar__links"><a href="#">Home</a></li>
-            <li class="navbar__links"><a href="#">Projects</a></li>
-            <li class="navbar__links"><a href="#">About</a></li>
-            <li class="navbar__links"><a href="#">Contact</a></li>
-        </ul>
+        <div class="navbar__container">
+            <img class="navbar__logo"
+                 src="resource/img/logo.png"
+                 alt="logo">
+            <ul class="navbar__list">
+                <li class="navbar__links"><a href="#">Home<span>()</span></a></li>
+                <li class="navbar__links"><a href="#">Projects<span>()</span></a></li>
+                <li class="navbar__links"><a href="#">About<span>()</span></a></li>
+                <li class="navbar__links"><a href="#">Contact<span>()</span></a></li>
+            </ul>
+        </div>
     </nav>
-
-    <header class="main">
-        <h1>DEVELOPER</h1>
-        <div class="main__info-container">
-            <div class="main__info">
-                <h6>Hi, I am</h6>
-                <H2 class="main__name">Aditya Kumawat</H2>
-                <h4 class="main__title">A SOFTWARE DEVELOPER</h4>
-                <p class="main__description">`A passionate Software Developer based in Jaipur, India. With a deep love
-                    for
-                    coding and
-                    problem-solving,
-                    I specialize in creating robust, scalable applications using modern technologies. Explore my work,
-                    skills, and projects to see how I can bring value to your team or project.`</p>
-                <button type="button"
-                        class="main__contact-btn">Contact me!</button>
+    <div class="snap-scroll">
+        <header class="main">
+            <div class="main__container">
+                <h1>DEVELOPER</h1>
+                <div class="main__info-container">
+                    <div class="main__info">
+                        <h6>Hi, I am</h6>
+                        <H2 class="main__name">Aditya Kumawat</H2>
+                        <h4 class="main__title">A SOFTWARE DEVELOPER</h4>
+                        <p class="main__description">`A passionate Software Developer based in Jaipur, India. With a
+                            deep
+                            love
+                            for
+                            coding and
+                            problem-solving,
+                            I specialize in creating robust, scalable applications using modern technologies. Explore my
+                            work,
+                            skills, and projects to see how I can bring value to your team or project.`</p>
+                        <button type="button"
+                                class="main__contact-btn">Contact me!</button>
+                    </div>
+                </div>
+                <div class="main__side-panel">
+                    <img class="main__programer-image"
+                         src="resource/img/coder4.png"
+                         alt="coder-image">
+                </div>
             </div>
-        </div>
-        <div class="main__side-panel">
-            <img class="main__programer-image"
-                 src="resource/img/coder4.png"
-                 alt="coder-image">
-        </div>
-    </header>
+        </header>
 
-    <section class="projects">
-        <h3>Projects</h3>
+        <section class="about-me">
+            <div class="about-me__container">
+                <div class="about-me__image">
+                    <img src="resource/img/about-me.png"
+                         alt="">
+                </div>
+                <div class="about-me__content">
+                    <h3>About me</h3>
+                    <div class="about-me__wai">
+                        <h4>Who Am I?</h4>
+                        <p>I’m Aditya Kumawat, a Software Developer with a strong foundation in full-stack development
+                            and a
+                            knack
+                            for solving complex challenges. I have honed my skills through internships, personal
+                            projects,
+                            and
+                            continuous learning. My expertise spans across various programming languages and frameworks,
+                            with a
+                            particular focus on Java, Spring Boot, and RESTful APIs.</p>
+                    </div>
+                    <div class="about-me__wdm">
+                        <h4>What Drives Me?</h4>
+                        <p>My journey in software development is fueled by a passion for technology and innovation.
+                            Whether
+                            it's
+                            building dynamic websites or developing backend systems, I thrive on crafting solutions that
+                            are
+                            both
+                            efficient and elegant. I’m committed to continuous learning and staying updated with the
+                            latest
+                            industry
+                            trends, ensuring that my skills are always cutting-edge.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <!-- ------------------------------------
+        <section class="projects">
+            <div class="projects__container">
+                <h3>Projects</h3>
+
+                <!-- ------------------------------------
          Splide List
          -------------------------------------- -->
-        <div id="js-splide"
-             class="splide">
-            <div class="splide__track">
-                <ul class="splide__list">
-                    <li class="splide__slide">
-                        <div class="c-card">
-                            <div class="c-card__content">
-                                <header class="c-card__header">
-                                    <h2 class="c-card__title"
-                                        data-title="Paris">rubix cube solver</h2>
-                                </header>
-                                <video class="c-card__video"
-                                       src="resource/projects/rubix-cube-solver-clip.mp4"
-                                       autoplay
-                                       loop
-                                       muted>
-                                    Your browser does not support the video tag.
-                                </video>
-                                <footer class="c-card__footer">
-                                    <a href="#"
-                                       class="c-card__link">see more</a>
-                                </footer>
-                            </div>
-                        </div>
-                    </li>
-                    <!-- Repeat for other cities (Bogotá, Lisboa, Madrid) -->
-                    <li class="splide__slide">
-                        <div class="c-card">
-                            <div class="c-card__content">
-                                <header class="c-card__header">
-                                    <h2 class="c-card__title"
-                                        data-title="Bogotá">
-                                        Stella
-                                    </h2>
-                                </header>
+                <div id="js-splide"
+                     class="splide">
+                    <div class="splide__track">
+                        <ul class="splide__list">
+                            <li class="splide__slide">
+                                <div class="c-card">
+                                    <div class="c-card__content">
+                                        <header class="c-card__header">
+                                            <h2 class="c-card__title"
+                                                data-title="Paris">rubix cube solver</h2>
+                                        </header>
+                                        <video class="c-card__video"
+                                               src="resource/projects/rubix-cube-solver-clip.mp4"
+                                               autoplay
+                                               loop
+                                               muted>
+                                            Your browser does not support the video tag.
+                                        </video>
+                                        <footer class="c-card__footer">
+                                            <a href="#"
+                                               class="c-card__link">see more</a>
+                                        </footer>
+                                    </div>
+                                </div>
+                            </li>
+                            <!-- Repeat for other cities (Bogotá, Lisboa, Madrid) -->
+                            <li class="splide__slide">
+                                <div class="c-card">
+                                    <div class="c-card__content">
+                                        <header class="c-card__header">
+                                            <h2 class="c-card__title"
+                                                data-title="Bogotá">
+                                                Stella
+                                            </h2>
+                                        </header>
 
-                                <video class="c-card__video"
-                                       src="resource/projects/stella-clip.mp4"
-                                       autoplay
-                                       loop
-                                       muted>
-                                    Your browser does not support the video tag.
-                                </video>
+                                        <video class="c-card__video"
+                                               src="resource/projects/stella-clip.mp4"
+                                               autoplay
+                                               loop
+                                               muted>
+                                            Your browser does not support the video tag.
+                                        </video>
 
-                                <footer class="c-card__footer">
-                                    <a href="#"
-                                       class="c-card__link">
-                                        see more
-                                    </a>
-                                </footer>
-                            </div>
+                                        <footer class="c-card__footer">
+                                            <a href="#"
+                                               class="c-card__link">
+                                                see more
+                                            </a>
+                                        </footer>
+                                    </div>
 
-                        </div>
-                    </li>
+                                </div>
+                            </li>
 
-                    <li class="splide__slide">
-                        <div class="c-card">
-                            <div class="c-card__content">
-                                <header class="c-card__header">
-                                    <h2 class="c-card__title"
-                                        data-title="Lisboa">
-                                        EMS
-                                    </h2>
-                                </header>
+                            <li class="splide__slide">
+                                <div class="c-card">
+                                    <div class="c-card__content">
+                                        <header class="c-card__header">
+                                            <h2 class="c-card__title"
+                                                data-title="Lisboa">
+                                                EMS
+                                            </h2>
+                                        </header>
 
-                                <video class="c-card__video"
-                                       src="resource/projects/EMS-clip.mp4"
-                                       autoplay
-                                       loop
-                                       muted>
-                                    Your browser does not support the video tag.
-                                </video>
+                                        <video class="c-card__video"
+                                               src="resource/projects/EMS-clip.mp4"
+                                               autoplay
+                                               loop
+                                               muted>
+                                            Your browser does not support the video tag.
+                                        </video>
 
-                                <footer class="c-card__footer">
-                                    <a href="#"
-                                       class="c-card__link">
-                                        see more
-                                    </a>
-                                </footer>
-                            </div>
-                        </div>
-                    </li>
+                                        <footer class="c-card__footer">
+                                            <a href="#"
+                                               class="c-card__link">
+                                                see more
+                                            </a>
+                                        </footer>
+                                    </div>
+                                </div>
+                            </li>
 
-                    <li class="splide__slide">
-                        <div class="c-card">
-                            <div class="c-card__content">
-                                <header class="c-card__header">
-                                    <h2 class="c-card__title"
-                                        data-title="Madrid">
-                                        callbreak-tracker
-                                    </h2>
-                                </header>
+                            <li class="splide__slide">
+                                <div class="c-card">
+                                    <div class="c-card__content">
+                                        <header class="c-card__header">
+                                            <h2 class="c-card__title"
+                                                data-title="Madrid">
+                                                callbreak-tracker
+                                            </h2>
+                                        </header>
 
-                                <video class="c-card__video"
-                                       src="resource/projects/callbreak-clip.mp4"
-                                       autoplay
-                                       loop
-                                       muted>
-                                    Your browser does not support the video tag.
-                                </video>
+                                        <video class="c-card__video"
+                                               src="resource/projects/callbreak-clip.mp4"
+                                               autoplay
+                                               loop
+                                               muted>
+                                            Your browser does not support the video tag.
+                                        </video>
 
-                                <footer class="c-card__footer">
-                                    <a href="#"
-                                       class="c-card__link">
-                                        see more
-                                    </a>
-                                </footer>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
+                                        <footer class="c-card__footer">
+                                            <a href="#"
+                                               class="c-card__link">
+                                                see more
+                                            </a>
+                                        </footer>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="about-me">
-        <div class="image--about-me">
-            <img src="resource/img/about-me.png"
-                 alt="">
-        </div>
-        <div class="content--about-me">
-            <h3>About me</h3>
-            <div class="who-am-i">
-                <h4>Who Am I?</h4>
-                <p>I’m Aditya Kumawat, a Software Developer with a strong foundation in full-stack development and a
-                    knack
-                    for solving complex challenges. I have honed my skills through internships, personal projects, and
-                    continuous learning. My expertise spans across various programming languages and frameworks, with a
-                    particular focus on Java, Spring Boot, and RESTful APIs.</p>
-            </div>
-            <div class="who-am-i">
-                <h4>What Drives Me?</h4>
-                <p>My journey in software development is fueled by a passion for technology and innovation. Whether it's
-                    building dynamic websites or developing backend systems, I thrive on crafting solutions that are
-                    both
-                    efficient and elegant. I’m committed to continuous learning and staying updated with the latest
-                    industry
-                    trends, ensuring that my skills are always cutting-edge.</p>
-            </div>
-        </div>
-    </section>
+    </div>
 
     <script type="text/javascript"
             src="resource/js/space.js"></script>

@@ -12,6 +12,7 @@
   --color-black: #121212;
   --color-gray: #1d1d1d;
   --color-purple: #a24dbf;
+  --navbar-height: 3.5rem;
 }
 * {
   margin: 0;
@@ -20,28 +21,41 @@
   user-select: none;
   font-family: "Inter", sans-serif;
 }
-html {
-  scroll-behavior: smooth;
-}
 
 body {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   background-color: var(--color-black);
-  /* pointer-events: none; */
 }
 
+.snap-scroll {
+  scroll-snap-type: y mandatory; /* vertical snapping */
+  overflow-y: scroll; /* enable scrolling */
+  height: calc(100vh - var(--navbar-height));
+  margin-top: var(--navbar-height);
+  scroll-behavior: smooth; /* smooth scrolling */
+  position: relative; /* Maintain position context */
+}
+
+/* Ensure the container scrolls smoothly and snaps to sections */
+.main,
+.projects,
+.about-me {
+  width: 100%;
+  scroll-snap-align: start; /* snap to the start of each section */
+  height: calc(100vh - var(--navbar-height));
+  margin-top: var(--navbar-height);
+}
+h3 {
+  font-size: 2rem;
+}
 /* ---------------------------------------- */
 /* CANVAS SETTINGS */
 /* ---------------------------------------- */
 canvas {
   position: fixed;
-  background-color: #1d1d1de8;
+  background-color: #1d1d1d;
   opacity: 60%;
   overflow: hidden;
-  /* width: 100%; */
   z-index: -1;
   height: 100vh;
 }
@@ -50,17 +64,17 @@ canvas {
 /* NAVIGATION PANEL */
 /* ---------------------------------------- */
 .navbar {
+  position: fixed;
+  top: 0;
   overflow: hidden;
-  background-color: var(--color-black);
+  background-color: var(--color-gray);
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  height: 4rem;
+  justify-content: center;
+  height: var(--navbar-height);
   width: 100%;
-  align-items: center;
 }
 
-.navbar::after {
+/* .navbar::after {
   content: "";
   position: absolute;
   display: block;
@@ -69,10 +83,18 @@ canvas {
   width: 100%;
   height: 2px;
   background-color: #a24dbf;
+} */
+
+.navbar__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  height: 100%;
 }
 
 .navbar__logo {
-  height: 100%;
+  height: 65%;
   cursor: pointer;
 }
 
@@ -89,16 +111,23 @@ canvas {
   text-decoration: none;
   color: white;
 }
+.navbar__links a span {
+  color: var(--color-purple);
+}
 
 /* ---------------------------------------- */
 /* HEADER */
 /* ---------------------------------------- */
 .main {
-  position: relative;
   display: flex;
-  width: 80%;
-  height: calc(100vh - 4rem);
+  justify-content: center;
   align-items: center;
+}
+
+.main__container {
+  display: flex;
+  align-items: center;
+  width: 80%;
 }
 
 .main h1 {
@@ -130,7 +159,7 @@ canvas {
   height: 100%;
 }
 .main__programer-image {
-  width: 90%;
+  width: 100%;
 }
 
 .main__info {
@@ -138,7 +167,7 @@ canvas {
   font-size: 1.2rem;
 }
 .main__name {
-  font-size: 5rem;
+  font-size: 4.5rem;
   font-weight: bold;
 }
 .main__title {
@@ -154,9 +183,8 @@ canvas {
   margin-top: 2rem;
   padding: 12px 20px;
   background-color: transparent;
-  text-decoration: none;
   border: 1px solid var(--color-purple);
-  /* font-size: 10px; */
+  text-decoration: none;
   font-weight: bold;
   letter-spacing: 3px;
   text-transform: uppercase;
@@ -173,17 +201,27 @@ canvas {
 /* ---------------------------------------- */
 
 .projects {
-  height: 100vh;
-  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  background-color: #121212be;
+  align-items: center;
+  /* background-color: #121212be; */
+}
+
+.projects__container {
+  width: 80%;
+  height: 100%;
 }
 
 .projects h3 {
-  width: 100%;
+  margin: 2rem;
   text-align: center;
+}
+
+.splide {
+  margin-bottom: 3rem;
+  /* box-shadow: -50px 0 100px -70px var(--color-black), */
+  /* 50px 0 100px -70px var(--color-black); */
 }
 
 .splide .splide__slide {
@@ -225,6 +263,7 @@ canvas {
   transition: transform 0.5s;
   overflow: hidden;
   cursor: pointer;
+  box-shadow: 0 0 40px 5px var(--color-black);
 }
 .c-card::after {
   content: "";
@@ -233,7 +272,7 @@ canvas {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.4);
   transition: all 400ms ease;
 }
 
@@ -283,45 +322,44 @@ canvas {
 /* ABOUT ME */
 /* ---------------------------------------- */
 .about-me {
-  margin: 3rem 0;
   display: flex;
-  background-color: #121212;
-  border-radius: 20px;
-  /* height: 100vh; */
-  overflow: hidden;
-  width: 80%;
+  justify-content: center;
+  align-items: center;
+  background-color: #12121271;
 }
 
-.image--about-me {
+.about-me__container {
+  background-color: var(--color-black);
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  height: 90%;
+}
+
+.about-me__image {
   flex: 2;
   display: grid;
   place-items: center;
 }
 
-.image--about-me img {
+.about-me__image img {
   width: 100%;
   border-radius: 50%;
 }
 
-h3 {
-  font-size: 2rem;
-}
-
-.content--about-me {
+.about-me__content {
   flex: 2;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   background-color: #1d1d1d;
   padding: 3rem;
-  /* box-shadow: 0 0 20px #1d1d1db2; */
 }
-
-.content--about-me h4:last-of-type {
+.about-me__content h4:last-of-type {
   margin-top: 2rem;
 }
 
-.content--about-me p {
+.about-me__content p {
   font-size: medium;
   font-style: italic;
   margin: 1rem 0;
