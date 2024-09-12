@@ -12,7 +12,7 @@
   --color-black: #121212;
   --color-gray: #1d1d1d;
   --color-purple: #a24dbf;
-  --navbar-height: 3.5rem;
+  --navbar-height: 4.5rem;
 }
 * {
   margin: 0;
@@ -30,8 +30,7 @@ body {
 .snap-scroll {
   scroll-snap-type: y mandatory; /* vertical snapping */
   overflow-y: scroll; /* enable scrolling */
-  height: calc(100vh - var(--navbar-height));
-  margin-top: var(--navbar-height);
+  height: 100vh;
   scroll-behavior: smooth; /* smooth scrolling */
   position: relative; /* Maintain position context */
 }
@@ -40,10 +39,10 @@ body {
 .main,
 .projects,
 .about-me {
+  height: calc(100% - var(--navbar-height));
   width: 100%;
+  padding-top: var(--navbar-height);
   scroll-snap-align: start; /* snap to the start of each section */
-  height: calc(100vh - var(--navbar-height));
-  margin-top: var(--navbar-height);
 }
 h3 {
   letter-spacing: 3px;
@@ -54,6 +53,7 @@ h3 {
 /* CANVAS SETTINGS */
 /* ---------------------------------------- */
 canvas {
+  top: 0;
   position: fixed;
   background-color: #1d1d1d;
   opacity: 60%;
@@ -67,9 +67,10 @@ canvas {
 /* ---------------------------------------- */
 .navbar {
   position: fixed;
+  z-index: 1;
   top: 0;
   overflow: hidden;
-  background-color: var(--color-gray);
+  /* background-color: var(--color-gray); */
   display: flex;
   justify-content: center;
   height: var(--navbar-height);
@@ -80,7 +81,7 @@ canvas {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 80%;
+  width: 95%;
   height: 100%;
 }
 
@@ -95,14 +96,18 @@ canvas {
 }
 
 .navbar__links {
-  margin-right: 1rem;
+  font-size: small;
+  margin-left: 1.5rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
 .navbar__links a {
   text-decoration: none;
   color: white;
+  transition: all 0.3s ease-in-out;
 }
-.navbar__links a span {
+.navbar__links a:hover {
   color: var(--color-purple);
 }
 
@@ -121,19 +126,6 @@ canvas {
   width: 80%;
 }
 
-.main h1 {
-  display: none;
-  position: absolute;
-  font-size: 180px;
-  font-family: "Monoton";
-  font-weight: 100;
-  color: #ffffff31; /* Choose your color */
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  /* mix-blend-mode: difference; Apply the blend mode */
-}
-
 .main__info-container {
   flex: 2;
   height: 100%;
@@ -150,16 +142,15 @@ canvas {
   height: 100%;
 }
 .main__programer-image {
-  width: 100%;
+  width: 90%;
 }
 
 .main__info {
   margin-right: 20%;
-  font-size: 1.2rem;
 }
 
 .main__info h6 {
-  font-size: 1rem;
+  font-size: 0.8rem;
 }
 
 .main__name {
@@ -168,14 +159,15 @@ canvas {
 }
 .main__title {
   color: var(--color-purple);
-  font-size: 1.8rem;
+  font-size: 1.6rem;
 }
 .main__description {
   font-style: italic;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   margin-top: 1rem;
 }
 .main__contact-btn {
+  font-size: 0.8rem;
   margin-top: 2rem;
   padding: 12px 20px;
   background-color: transparent;
@@ -193,64 +185,190 @@ canvas {
 }
 
 /* ---------------------------------------- */
+/* ABOUT ME */
+/* ---------------------------------------- */
+.about-me {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #12121271;
+}
+
+/* main about card */
+.about-me__container {
+  background-color: var(--color-black);
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  height: 90%;
+  border-radius: 0.7rem;
+  overflow: hidden;
+  box-shadow: 0 0 40px 5px var(--color-black);
+}
+/* about image section */
+.about-me__image {
+  width: 50%;
+  display: grid;
+  place-items: center;
+}
+.about-me__image img {
+  width: 100%;
+}
+/* about content section */
+.about-me__content {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  background-color: #1d1d1d;
+  padding: 2.5rem;
+  font-size: 0.8rem;
+  line-height: 1.2rem;
+  letter-spacing: 1px;
+  word-spacing: 1px;
+}
+
+/* main about heading */
+.about-me__heading {
+  margin: 1rem 0 1.8rem 0;
+}
+
+/* about me carousel */
+.about-me__splide {
+  flex-grow: 1;
+  position: relative;
+}
+.about-me__splide .splide__arrow {
+  letter-spacing: 3px;
+  font-weight: bold;
+  margin-top: 33%;
+  background: none;
+}
+.about-me__splide .splide__arrow img {
+  margin: 0.5em;
+  width: 2em;
+}
+
+/* about content h3 styling */
+.about-me__who-am-i h3,
+.about-me__skills h3,
+.about-me__work-experience h3 {
+  color: var(--color-purple);
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+/* about (who am i section) */
+.about-me__who-am-i p span {
+  color: var(--color-purple);
+}
+.about-me__who-am-i p span a {
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--color-purple);
+}
+
+/* about (work experience section) */
+.about-me__work-experience h4 {
+  margin: 1.5rem 0 0.6rem 0;
+}
+.about-me__work-experience span {
+  color: var(--color-purple);
+  font-size: 0.8rem;
+}
+.about-me__work-experience ul {
+  list-style: disc;
+  margin-left: 1.5rem;
+}
+
+/* about (skills section) */
+.about-me__skills .skills {
+  margin-top: 1.5rem;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr); /* 9 columns */
+  grid-template-rows: repeat(5, auto); /* 2 rows */
+  gap: 15px;
+  justify-items: center;
+  align-items: center; /* Center the images vertically */
+}
+.about-me__skills .skills img {
+  width: 70%;
+  filter: saturate(0);
+  transition: all 0.3s ease-in-out;
+}
+.about-me__skills .skills img:hover,
+.about-me__skills .skills .active {
+  filter: saturate(1);
+}
+.about-me__skills--description {
+  color: var(--color-purple);
+  padding: 0.5rem;
+  flex-grow: 1;
+  overflow-y: scroll;
+  border: 1px solid #fcfcfc;
+}
+
+/* ---------------------------------------- */
 /* Projects */
 /* ---------------------------------------- */
-
 .projects {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
-  /* background-color: #121212be; */
 }
-
+/* main projects container */
 .projects__container {
+  display: flex;
+  flex-direction: column;
   width: 80%;
-  height: 100%;
+  height: 90%;
 }
-
+/* projects main heading */
 .projects h3 {
-  margin: 2rem;
+  margin: 1rem 0 2rem 0;
   text-align: center;
 }
 
-.splide {
+/* projects carousel */
+.projects__splide {
+  flex-grow: 1;
   margin-bottom: 3rem;
   /* box-shadow: -50px 0 100px -70px var(--color-black), */
   /* 50px 0 100px -70px var(--color-black); */
 }
-
-.splide .splide__slide {
+.projects__splide .splide__slide {
   position: relative;
   min-height: 450px;
 }
-
-.splide .splide__slide.is-active .c-card {
+/* card active styling */
+.projects__splide .splide__slide.is-active .c-card {
   transform: scale(1);
 }
-.splide .splide__slide.is-active .c-card::after {
+.projects__splide .splide__slide.is-active .c-card::after {
   background-color: rgba(0, 0, 0, 0);
   pointer-events: none;
 }
-
-.splide .splide__slide.is-active .c-card .c-card__title {
+.projects__splide .splide__slide.is-active .c-card .c-card__title {
   color: var(--color-purple);
 }
-
-.splide .splide__slide.is-active .c-card__video,
-.splide .splide__slide.is-active .c-card__footer {
+.projects__splide .splide__slide.is-active .c-card__video,
+.projects__splide .splide__slide.is-active .c-card__footer {
   opacity: 1;
   pointer-events: auto;
   display: grid;
 }
 
-.splide .splide__slide:not(.is-active) .c-card__video,
-.splide .splide__slide:not(.is-active) .c-card__footer {
+.projects__splide .splide__slide:not(.is-active) .c-card__video,
+.projects__splide .splide__slide:not(.is-active) .c-card__footer {
   /* opacity: 0; */
   /* pointer-events: none; */
 }
 
+/* projects card styling */
 .c-card {
+  display: flex;
+  flex-direction: column;
   position: relative;
   background-color: var(--color-gray);
   height: 100%;
@@ -271,13 +389,14 @@ canvas {
   background-color: rgba(0, 0, 0, 0.4);
   transition: all 400ms ease;
 }
-
+/* card heading container */
 .c-card__header {
+  padding: 2rem 0.5rem;
   display: grid;
   place-items: center;
-  padding: 3rem 2rem;
+  text-align: center;
 }
-
+/* card heading */
 .c-card__title {
   text-transform: uppercase;
   letter-spacing: 4px;
@@ -291,14 +410,12 @@ canvas {
   /* object-fit: cover; */
   transition: all 400ms ease;
 }
-
 .c-card__footer {
   display: none;
   place-items: center;
   padding: 4rem 1rem;
   transition: all 400ms ease;
 }
-
 .c-card__link {
   padding: 12px 20px;
   text-decoration: none;
@@ -314,96 +431,7 @@ canvas {
 .c-card__link:hover {
   background-color: var(--color-purple);
 }
+
 /* ---------------------------------------- */
-/* ABOUT ME */
+/* Contact me */
 /* ---------------------------------------- */
-.about-me {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #12121271;
-}
-
-.about-me__container {
-  background-color: var(--color-black);
-  display: flex;
-  justify-content: center;
-  width: 80%;
-  height: 90%;
-  border-radius: 5px;
-  overflow: hidden;
-  box-shadow: 0 0 40px 5px var(--color-black);
-}
-
-.about-me__image {
-  flex: 2;
-  display: grid;
-  place-items: center;
-}
-
-.about-me__image img {
-  width: 100%;
-  border-radius: 50%;
-}
-
-.about-me__content {
-  flex: 2;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: normal;
-  background-color: #1d1d1d;
-  padding: 2rem;
-}
-
-.about-me__heading {
-  margin-bottom: 1rem;
-}
-
-.about-me__content .separator {
-  height: 1px;
-  background-color: var(--color-black);
-  width: 100%;
-}
-
-.about-me__who-am-i h3,
-.about-me__skills h3,
-.about-me__work-experience h3 {
-  font-size: 1.1rem;
-  margin-bottom: 0.5rem;
-}
-
-.about-me__who-am-i p {
-  font-size: small;
-  font-style: italic;
-}
-
-.about-me__skills .skills {
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(9, 1fr); /* 9 columns */
-  grid-template-rows: repeat(2, auto); /* 2 rows */
-  gap: 15px;
-  justify-items: center;
-  align-items: center; /* Center the images vertically */
-}
-
-.about-me__skills .skills img {
-  width: 70%;
-  filter: saturate(0);
-  transition: all 0.3s ease-in-out;
-}
-
-.about-me__skills .skills img:hover {
-  filter: saturate(1);
-}
-
-.about-me__work-experience ul li {
-  margin-left: 1rem;
-  font-size: small;
-  margin-bottom: 0.5rem;
-}
-.about-me__work-experience ul li span {
-  font-weight: bold;
-  color: var(--color-purple);
-}
