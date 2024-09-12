@@ -81,7 +81,7 @@ canvas {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 95%;
+  width: 92%;
   height: 100%;
 }
 
@@ -115,73 +115,85 @@ canvas {
 /* HEADER */
 /* ---------------------------------------- */
 .main {
+  background-image: url("/resource/img/main_bg.jpg");
+  background-size: cover;
+  background-position: center;
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
 }
 
 .main__container {
   display: flex;
   align-items: center;
-  width: 80%;
+  justify-content: center;
+  width: 92%;
+  height: 92%;
 }
 
-.main__info-container {
-  flex: 2;
+.main__socials {
+  width: 1.2rem;
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
+  justify-content: end;
 }
-
-.main__side-panel {
-  display: grid;
-  place-items: center;
-  /* opacity: 90%; */
-  flex: 1;
-  height: 100%;
-}
-.main__programer-image {
-  width: 90%;
+.main__socials img {
+  margin-top: 1.2em;
+  width: 100%;
+  opacity: 0.6;
 }
 
 .main__info {
-  margin-right: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-shadow: 5px 6px 18px var(--color-black); /* Horizontal offset, Vertical offset, Blur radius, Color */
 }
 
 .main__info h6 {
+  opacity: 0.6;
   font-size: 0.8rem;
+  margin-right: 25rem;
 }
-
 .main__name {
-  font-size: 4.5rem;
-  font-weight: bold;
+  font-size: 9rem;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+.main__info h2 {
+  margin-top: -1.8rem;
+  font-size: 1.1rem;
+  margin-left: 30rem;
+  opacity: 0.6;
 }
 .main__title {
-  color: var(--color-purple);
-  font-size: 1.6rem;
-}
-.main__description {
-  font-style: italic;
-  font-size: 0.8rem;
   margin-top: 1rem;
+  font-size: 1.3rem;
+  color: var(--color-purple);
+  /* opacity: 0.9; */
+  margin-right: 20rem;
 }
-.main__contact-btn {
-  font-size: 0.8rem;
-  margin-top: 2rem;
-  padding: 12px 20px;
-  background-color: transparent;
-  border: 1px solid var(--color-purple);
-  text-decoration: none;
-  font-weight: bold;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  transition: all 0.3s ease-in-out;
+
+.main__scroll {
+  width: 1.2rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  writing-mode: vertical-rl; /* Vertical text direction */
+  letter-spacing: 0.2rem;
+  /* text-orientation: upright; */
+}
+.main__scroll img {
+  margin-top: 1rem;
+  width: 100%;
+  transform: rotate(90deg);
   cursor: pointer;
-}
-.main__contact-btn:hover {
-  background-color: var(--color-purple);
-  transition: ease-in;
 }
 
 /* ---------------------------------------- */
