@@ -28,6 +28,9 @@ body {
 }
 
 .snap-scroll {
+  background-image: url("/resource/img/main_bg.jpg");
+  background-size: cover;
+  background-position: center;
   scroll-snap-type: y mandatory; /* vertical snapping */
   overflow-y: scroll; /* enable scrolling */
   height: 100vh;
@@ -44,10 +47,21 @@ body {
   padding-top: var(--navbar-height);
   scroll-snap-align: start; /* snap to the start of each section */
 }
+
+.main__container,
+.about-me__container,
+.projects__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 75%;
+  height: 80%;
+}
+
 h3 {
-  letter-spacing: 3px;
+  letter-spacing: 0.3rem;
   text-transform: uppercase;
-  font-size: 2rem;
+  font-size: 2.5rem;
 }
 /* ---------------------------------------- */
 /* CANVAS SETTINGS */
@@ -115,23 +129,19 @@ canvas {
 /* HEADER */
 /* ---------------------------------------- */
 .main {
-  background-image: url("/resource/img/main_bg.jpg");
-  background-size: cover;
-  background-position: center;
   display: flex;
   justify-content: center;
-  /* align-items: center; */
+  align-items: center;
 }
 
 .main__container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 92%;
-  height: 92%;
+  margin-bottom: var(--navbar-height);
 }
 
 .main__socials {
+  position: fixed;
+  left: 4%;
+  bottom: 4%;
   width: 1.2rem;
   height: 100%;
   display: flex;
@@ -180,6 +190,9 @@ canvas {
 }
 
 .main__scroll {
+  position: fixed;
+  right: 4%;
+  bottom: 4%;
   width: 1.2rem;
   height: 100%;
   display: flex;
@@ -200,6 +213,7 @@ canvas {
 /* ABOUT ME */
 /* ---------------------------------------- */
 .about-me {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -209,17 +223,15 @@ canvas {
 /* main about card */
 .about-me__container {
   background-color: var(--color-black);
-  display: flex;
   justify-content: center;
-  width: 80%;
-  height: 90%;
   border-radius: 0.7rem;
   overflow: hidden;
-  box-shadow: 0 0 40px 5px var(--color-black);
+  box-shadow: 18px 12px 50px 8px var(--color-black);
 }
 /* about image section */
 .about-me__image {
-  width: 50%;
+  height: 100%;
+  width: 42%;
   display: grid;
   place-items: center;
 }
@@ -228,36 +240,50 @@ canvas {
 }
 /* about content section */
 .about-me__content {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  background-color: #1d1d1d;
+  height: calc(100% - 5rem);
+  width: calc(58% - 5rem);
   padding: 2.5rem;
+  background-color: #1d1d1d;
   font-size: 0.8rem;
   line-height: 1.2rem;
   letter-spacing: 1px;
   word-spacing: 1px;
 }
 
-/* main about heading */
-.about-me__heading {
-  margin: 1rem 0 1.8rem 0;
-}
-
 /* about me carousel */
 .about-me__splide {
-  flex-grow: 1;
+  width: 100%;
+  height: 100%;
   position: relative;
 }
+
+.about-me__splide .splide__track {
+  height: 100%;
+}
+.about-me__splide .splide__arrows {
+  position: relative;
+  height: 1rem;
+  margin: 0 1rem;
+  bottom: 0.5rem;
+}
 .about-me__splide .splide__arrow {
+  position: absolute;
+  bottom: 0;
   letter-spacing: 3px;
-  font-weight: bold;
-  margin-top: 33%;
+  /* font-weight: bold; */
+  /* margin-top: 33%; */
   background: none;
 }
+.about-me__splide .splide__arrow--prev {
+  left: 0;
+}
+.about-me__splide .splide__arrow--next {
+  right: 0;
+}
+
 .about-me__splide .splide__arrow img {
-  margin: 0.5em;
-  width: 2em;
+  margin: 0 0.5rem;
+  width: 1rem;
 }
 
 /* about content h3 styling */
@@ -265,8 +291,8 @@ canvas {
 .about-me__skills h3,
 .about-me__work-experience h3 {
   color: var(--color-purple);
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
 }
 
 /* about (who am i section) */
@@ -285,11 +311,13 @@ canvas {
 }
 .about-me__work-experience span {
   color: var(--color-purple);
-  font-size: 0.8rem;
 }
 .about-me__work-experience ul {
   list-style: disc;
   margin-left: 1.5rem;
+}
+.about-me__work-experience ul li {
+  margin-bottom: 0.3rem;
 }
 
 /* about (skills section) */
@@ -331,27 +359,27 @@ canvas {
 }
 /* main projects container */
 .projects__container {
-  display: flex;
+  position: relative;
   flex-direction: column;
-  width: 80%;
   height: 90%;
 }
 /* projects main heading */
 .projects h3 {
-  margin: 1rem 0 2rem 0;
+  margin-bottom: 1rem;
   text-align: center;
 }
 
 /* projects carousel */
 .projects__splide {
-  flex-grow: 1;
-  margin-bottom: 3rem;
-  /* box-shadow: -50px 0 100px -70px var(--color-black), */
-  /* 50px 0 100px -70px var(--color-black); */
+  flex: 1;
+  width: 100%;
+}
+.projects__splide .splide__track {
+  height: 100%;
+  width: 100%;
 }
 .projects__splide .splide__slide {
   position: relative;
-  min-height: 450px;
 }
 /* card active styling */
 .projects__splide .splide__slide.is-active .c-card {
@@ -379,17 +407,16 @@ canvas {
 
 /* projects card styling */
 .c-card {
-  display: flex;
-  flex-direction: column;
+  height: 85%;
+  width: 90%;
+  margin: 7.5% 5%;
   position: relative;
   background-color: var(--color-gray);
-  height: 100%;
-  border-radius: 10px;
+  border-radius: 0.5rem;
   transform: scale(0.8);
   transition: transform 0.5s;
   overflow: hidden;
-  cursor: pointer;
-  box-shadow: 0 0 40px 5px var(--color-black);
+  box-shadow: 6px 18px 21px 6px var(--color-black);
 }
 .c-card::after {
   content: "";
@@ -401,6 +428,11 @@ canvas {
   background-color: rgba(0, 0, 0, 0.4);
   transition: all 400ms ease;
 }
+.c-card__content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
 /* card heading container */
 .c-card__header {
   padding: 2rem 0.5rem;
@@ -411,8 +443,8 @@ canvas {
 /* card heading */
 .c-card__title {
   text-transform: uppercase;
-  letter-spacing: 4px;
-  font-size: 18px;
+  letter-spacing: 0.2rem;
+  font-size: 1.1rem;
   transition: all 400ms ease;
 }
 
@@ -423,18 +455,17 @@ canvas {
   transition: all 400ms ease;
 }
 .c-card__footer {
+  flex: 1;
   display: none;
   place-items: center;
-  padding: 4rem 1rem;
   transition: all 400ms ease;
 }
 .c-card__link {
-  padding: 12px 20px;
+  padding: 0.75rem 1.3rem;
   text-decoration: none;
   /* background-color: var(--color-dark); */
   border: 1px solid var(--color-purple);
-  font-size: 10px;
-  font-weight: bold;
+  font-size: 0.7rem;
   letter-spacing: 3px;
   text-transform: uppercase;
   transition: all 0.3s ease-in-out;
@@ -442,6 +473,10 @@ canvas {
 
 .c-card__link:hover {
   background-color: var(--color-purple);
+}
+
+.projects__splide .splide__pagination li {
+  margin: 0 0.3rem;
 }
 
 /* ---------------------------------------- */
