@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Adiyta Kumawat</title>
     <link rel="stylesheet"
           href="resource/css/style.css">
     <link href=" https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css "
@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <canvas id="2dcanvas"></canvas>
+    <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="navbar__container">
             <img class="navbar__logo"
@@ -27,41 +27,40 @@
             </ul>
         </div>
     </nav>
+    <!-- Main fram for plasing sections -->
     <div class="snap-scroll">
+        <div class="main__socials">
+            <a href="https://www.instagram.com/adityakumawat21/"
+               target="_blank"><img src="resource/img/instagram.png"
+                     alt=""></a>
+            <a href="https://www.linkedin.com/in/adityakumawat21/"
+               target="_blank"><img src="resource/img/linkedin.png"
+                     alt=""></a>
+            <a href="https://github.com/AdityaKumawat21"
+               target="_blank"><img src="resource/img/github.png"
+                     alt=""></a>
+        </div>
+        <div class="main__scroll">scroll<img src="resource/img/arrow.png"
+                 alt=""></div>
+        <!-- Main page / Home page -->
         <header id="home"
                 class="main">
             <div class="main__container">
-                <div class="main__socials">
-                    <a href="https://www.instagram.com/adityakumawat21/"
-                       target="_blank"
-                       rel="noopener noreferrer"><img src="resource/img/instagram(2).png"
-                             alt=""></a>
-                    <a href="https://www.linkedin.com/in/adityakumawat21/"
-                       target="_blank"
-                       rel="noopener noreferrer"><img src="resource/img/linkedin(1).png"
-                             alt=""></a>
-                    <a href="https://github.com/AdityaKumawat21"
-                       target="_blank"
-                       rel="noopener noreferrer"><img src="resource/img/github.png"
-                             alt=""></a>
-                </div>
                 <div class="main__info">
                     <h6>Hi, I am</h6>
                     <h1 class="main__name">Aditya</h1>
-                    <h2>Kumawat</h2>
-                    <h4 class="main__title">A SOFTWARE DEVELOPER</h4>
+                    <h4>Kumawat</h4>
+                    <h3 class="main__title">A SOFTWARE DEVELOPER</h3>
                 </div>
-                <div class="main__scroll">scroll<img src="resource/img/arrow.png"
-                         alt=""></div>
             </div>
         </header>
-
+        <!-- About me Page -->
         <section id="about"
                  class="about-me">
             <div class="about-me__container">
                 <div class="about-me__image">
                     <img src="resource/img/about-me.png"
-                         alt="">
+                         alt="About ME">
                 </div>
                 <div class="about-me__content">
                     <div id="js-splide-about"
@@ -77,16 +76,12 @@
                                             started with a deep curiosity, and over time, I’ve honed my skills across
                                             diverse languages and frameworks, including C++, Java, Python, HTML, CSS,
                                             JavaScript, and Spring Boot.
-
                                             <br><br>
-
                                             Beyond the screen, I’m always on the lookout for new challenges and love
                                             exploring innovative technologies. When I’m not coding, you can find me
                                             immersed in gaming, discovering new music, or capturing the world through
                                             photography.
-
                                             <br><br>
-
                                             <span>
                                                 Let’s connect and create something amazing together! <a
                                                    href="https://www.linkedin.com/in/adityakumawat105">LinkedIn</a> | <a
@@ -200,206 +195,142 @@
                         <div class="splide__arrows">
                             <button class="splide__arrow splide__arrow--prev">
                                 <img src="resource/img/arrow.png"
-                                     alt=""
                                      style="rotate: 180deg;"> Prev
                             </button>
                             <button class="splide__arrow splide__arrow--next">
-                                Next <img src="resource/img/arrow.png"
-                                     alt="">
+                                Next <img src="resource/img/arrow.png">
                             </button>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-
+        <!-- Projects section -->
         <section id="projects"
                  class="projects">
             <div class="projects__container">
-                <h3>Projects</h3>
-
-                <!-- ------------------------------------
-         Splide List
-         -------------------------------------- -->
+                <h2>Projects</h2>
                 <div id="js-splide-projects"
                      class="projects__splide splide">
                     <div class="splide__track">
                         <ul class="splide__list">
                             <li class="splide__slide">
-                                <div class="c-card">
-                                    <div class="c-card__content">
-                                        <header class="c-card__header">
-                                            <h2 class="c-card__title"
-                                                data-title="Paris">rubix cube solver</h2>
-                                        </header>
-                                        <video class="c-card__video"
-                                               src="resource/projects/rubix-cube-solver-clip.mp4"
-                                               autoplay
-                                               loop
-                                               muted>
-                                            Your browser does not support the video tag.
-                                        </video>
-                                        <footer class="c-card__footer">
-                                            <a href="#"
-                                               class="c-card__link">see more</a>
-                                        </footer>
-                                    </div>
+                                <div class="project-card">
+                                    <header class="project-card__header">
+                                        <h2 class="project-card__title">rubix cube solver</h2>
+                                    </header>
+                                    <video class="project-card__video"
+                                           src="resource/projects/rubix-cube-solver-clip.mp4"
+                                           autoplay
+                                           loop
+                                           muted>
+                                        Your browser does not support the video tag.
+                                    </video>
+                                    <footer class="project-card__footer">
+                                        <a href="https://github.com/Adikumaw/rubix-cube-solver"
+                                           class="project-card__link">see more</a>
+                                    </footer>
                                 </div>
                             </li>
-                            <!-- Repeat for other cities (Bogotá, Lisboa, Madrid) -->
                             <li class="splide__slide">
-                                <div class="c-card">
-                                    <div class="c-card__content">
-                                        <header class="c-card__header">
-                                            <h2 class="c-card__title"
-                                                data-title="Bogotá">
-                                                Stella
-                                            </h2>
-                                        </header>
-
-                                        <video class="c-card__video"
-                                               src="resource/projects/stella-clip.mp4"
-                                               autoplay
-                                               loop
-                                               muted>
-                                            Your browser does not support the video tag.
-                                        </video>
-
-                                        <footer class="c-card__footer">
-                                            <a href="#"
-                                               class="c-card__link">
-                                                see more
-                                            </a>
-                                        </footer>
-                                    </div>
-
+                                <div class="project-card">
+                                    <header class="project-card__header">
+                                        <h2 class="project-card__title">Stella</h2>
+                                    </header>
+                                    <video class="project-card__video"
+                                           src="resource/projects/stella-clip.mp4"
+                                           autoplay
+                                           loop
+                                           muted>
+                                        Your browser does not support the video tag.
+                                    </video>
+                                    <footer class="project-card__footer">
+                                        <a href="https://github.com/Adikumaw/stella"
+                                           class="project-card__link">see more</a>
+                                    </footer>
                                 </div>
                             </li>
-
                             <li class="splide__slide">
-                                <div class="c-card">
-                                    <div class="c-card__content">
-                                        <header class="c-card__header">
-                                            <h2 class="c-card__title"
-                                                data-title="Lisboa">
-                                                EMS
-                                            </h2>
-                                        </header>
-
-                                        <video class="c-card__video"
-                                               src="resource/projects/EMS-clip.mp4"
-                                               autoplay
-                                               loop
-                                               muted>
-                                            Your browser does not support the video tag.
-                                        </video>
-
-                                        <footer class="c-card__footer">
-                                            <a href="#"
-                                               class="c-card__link">
-                                                see more
-                                            </a>
-                                        </footer>
-                                    </div>
+                                <div class="project-card">
+                                    <header class="project-card__header">
+                                        <h2 class="project-card__title">EMS</h2>
+                                    </header>
+                                    <video class="project-card__video"
+                                           src="resource/projects/EMS-clip.mp4"
+                                           autoplay
+                                           loop
+                                           muted>
+                                        Your browser does not support the video tag.
+                                    </video>
+                                    <footer class="project-card__footer">
+                                        <a href="https://github.com/Adikumaw/EMS"
+                                           class="project-card__link">see more</a>
+                                    </footer>
                                 </div>
                             </li>
-
-
                             <li class="splide__slide">
-                                <div class="c-card">
-                                    <div class="c-card__content">
-                                        <header class="c-card__header">
-                                            <h2 class="c-card__title"
-                                                data-title="Madrid">
-                                                Smart Calculator (Fully Responsive)
-                                            </h2>
-                                        </header>
-
-                                        <video class="c-card__video"
-                                               src="resource/projects/calculator-clip.mp4"
-                                               autoplay
-                                               loop
-                                               muted>
-                                            Your browser does not support the video tag.
-                                        </video>
-
-                                        <footer class="c-card__footer">
-                                            <a href="#"
-                                               class="c-card__link">
-                                                see more
-                                            </a>
-                                        </footer>
-                                    </div>
+                                <div class="project-card">
+                                    <header class="project-card__header">
+                                        <h2 class="project-card__title">Smart Calculator (Fully Responsive)</h2>
+                                    </header>
+                                    <video class="project-card__video"
+                                           src="resource/projects/calculator-clip.mp4"
+                                           autoplay
+                                           loop
+                                           muted>
+                                        Your browser does not support the video tag.
+                                    </video>
+                                    <footer class="project-card__footer">
+                                        <a href="https://github.com/Adikumaw/calculator"
+                                           class="project-card__link">see more</a>
+                                    </footer>
                                 </div>
                             </li>
-
                             <li class="splide__slide">
-                                <div class="c-card">
-                                    <div class="c-card__content">
-                                        <header class="c-card__header">
-                                            <h2 class="c-card__title"
-                                                data-title="Madrid">
-                                                Space Tourism
-                                            </h2>
-                                        </header>
-
-                                        <video class="c-card__video"
-                                               src="resource/projects/space-tourism-clip.mp4"
-                                               autoplay
-                                               loop
-                                               muted>
-                                            Your browser does not support the video tag.
-                                        </video>
-
-                                        <footer class="c-card__footer">
-                                            <a href="#"
-                                               class="c-card__link">
-                                                see more
-                                            </a>
-                                        </footer>
-                                    </div>
+                                <div class="project-card">
+                                    <header class="project-card__header">
+                                        <h2 class="project-card__title">Space Tourism</h2>
+                                    </header>
+                                    <video class="project-card__video"
+                                           src="resource/projects/space-tourism-clip.mp4"
+                                           autoplay
+                                           loop
+                                           muted>
+                                        Your browser does not support the video tag.
+                                    </video>
+                                    <footer class="project-card__footer">
+                                        <a href="https://adikumaw.github.io/spacetourism/"
+                                           class="project-card__link">see more</a>
+                                    </footer>
                                 </div>
                             </li>
-
                             <li class="splide__slide">
-                                <div class="c-card">
-                                    <div class="c-card__content">
-                                        <header class="c-card__header">
-                                            <h2 class="c-card__title"
-                                                data-title="Madrid">
-                                                callbreak-tracker
-                                            </h2>
-                                        </header>
-
-                                        <video class="c-card__video"
-                                               src="resource/projects/callbreak-clip.mp4"
-                                               autoplay
-                                               loop
-                                               muted>
-                                            Your browser does not support the video tag.
-                                        </video>
-
-                                        <footer class="c-card__footer">
-                                            <a href="#"
-                                               class="c-card__link">
-                                                see more
-                                            </a>
-                                        </footer>
-                                    </div>
+                                <div class="project-card">
+                                    <header class="project-card__header">
+                                        <h2 class="project-card__title">callbreak-tracker</h2>
+                                    </header>
+                                    <video class="project-card__video"
+                                           src="resource/projects/callbreak-clip.mp4"
+                                           autoplay
+                                           loop
+                                           muted>
+                                        Your browser does not support the video tag.
+                                    </video>
+                                    <footer class="project-card__footer">
+                                        <a href="https://github.com/Adikumaw/cards"
+                                           class="project-card__link">see more</a>
+                                    </footer>
                                 </div>
                             </li>
-
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
-
     </div>
-
     <script type="text/javascript"
             src="resource/js/main.js"></script>
-    <script src=" https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js "></script>
+    <script src="resource/js/splide.min.js"></script>
     <script src="resource/js/splide.js"></script>
 </body>
 
