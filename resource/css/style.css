@@ -139,6 +139,7 @@ canvas {
 }
 
 .main__socials {
+  z-index: 1;
   position: fixed;
   left: 4%;
   bottom: 4%;
@@ -190,6 +191,7 @@ canvas {
 }
 
 .main__scroll {
+  z-index: 1;
   position: fixed;
   right: 4%;
   bottom: 4%;
