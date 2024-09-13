@@ -28,7 +28,7 @@ body {
 }
 
 .snap-scroll {
-  background-image: url("/resource/img/main_bg.jpg");
+  background-image: url("resource/img/main_bg.jpg");
   background-size: cover;
   background-position: center;
   scroll-snap-type: y mandatory; /* vertical snapping */
