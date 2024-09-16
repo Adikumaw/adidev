@@ -78,7 +78,8 @@ body {
 /* Ensure the container scrolls smoothly and snaps to sections */
 .main,
 .projects,
-.about-me {
+.about-me,
+.contact {
   position: relative;
   height: calc(100% - var(--navbar-height));
   width: 100%;
@@ -91,7 +92,8 @@ body {
 /* Containers inside Section */
 .main__container,
 .about-me__container,
-.projects__container {
+.projects__container,
+.contact__container {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -142,7 +144,7 @@ h3 {
 }
 
 .navbar__links {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   margin-left: 1.5rem;
   letter-spacing: var(--letter-spacing);
   text-transform: uppercase;
@@ -151,10 +153,13 @@ h3 {
 .navbar__links a {
   text-decoration: none;
   color: var(--color-white);
+  opacity: 0.7;
   transition: all 0.3s ease-in-out;
+  font-weight: bold;
 }
 .navbar__links a:hover {
-  color: var(--color-purple);
+  /* color: var(--color-purple); */
+  opacity: 1;
 }
 
 /* ---------------------------------------- */
@@ -203,7 +208,8 @@ h3 {
 /* ---------------------------------------- */
 /* ABOUT ME */
 /* ---------------------------------------- */
-.about-me {
+.about-me,
+.contact {
   background-color: #12121271;
 }
 
@@ -445,3 +451,149 @@ h3 {
 /* ---------------------------------------- */
 /* Contact me */
 /* ---------------------------------------- */
+
+/* main about card */
+.contact__container {
+  height: 85%;
+  font-size: 0.8rem;
+  line-height: 1.2rem;
+  letter-spacing: 0.07rem;
+  word-spacing: 0.08rem;
+}
+
+.contact__info {
+  height: calc(100% - 2rem);
+  /* padding: 0 2rem; */
+  margin-right: 2rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.contact__info .contact__para {
+  text-align: center;
+  width: 90%;
+}
+
+.contact__info p {
+  opacity: var(--opacity-light);
+}
+
+.contact__info .phone-no,
+.contact__info .email,
+.contact__info .linkedin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.8rem;
+}
+
+.contact__info .phone-no img,
+.contact__info .email img,
+.contact__info .linkedin img {
+  width: 1rem;
+  margin-right: 0.8rem;
+}
+
+.contact__info .phone-no h3,
+.contact__info .email h3,
+.contact__info .linkedin h3 {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+}
+
+.or {
+  color: var(--color-purple);
+}
+
+.contact__card {
+  position: relative;
+  background-image: url("img/contact_bg.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin-left: 3rem;
+  flex: 1;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 6px 18px 21px 6px var(--color-black);
+}
+.contact__card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #1d1d1d56;
+  transition: all 400ms ease;
+  pointer-events: none;
+}
+
+.contact__card h2 {
+  /* z-index: 1; */
+  margin-top: 2rem;
+  font-size: 1.7rem;
+  color: var(--color-purple);
+  /* opacity: var(--opacity-light); */
+}
+
+.contact__card form {
+  z-index: 1;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: calc(100% - 4rem);
+  padding: 2rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  color: #fcfcfcbb;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-bottom: 0.1rem solid #535353;
+  background: none;
+  font-size: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  transition: all 0.3s ease;
+  /* font-size: 1rem; */
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  color: var(--color-white);
+  border-color: var(--color-purple);
+  outline: none;
+}
+
+.contact-form button {
+  padding: 0.75rem 1.3rem;
+  text-decoration: none;
+  border: 1px solid var(--color-purple);
+  font-size: 0.7rem;
+  letter-spacing: var(--letter-spacing);
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: all 0.3s ease-in-out;
+  background: none;
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  /* background-color: var(--color-purple); */
+  opacity: 1;
+}

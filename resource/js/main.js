@@ -15,3 +15,12 @@ skillsArray.forEach((img) => {
     skillDescription.innerHTML = this.dataset.info;
   });
 });
+
+// Some weird issues on mobile & safari - damn .. any ideas?
+
+document.querySelectorAll(".button").forEach((button) => {
+  button.addEventListener("click", (e) => {
+    button.classList.add("processing");
+    e.preventDefault();
+  });
+});
