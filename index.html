@@ -356,18 +356,22 @@
                     <p class="contact__para">If you have any questions or would like to connect, don’t hesitate to reach
                         out. Feel free to send me a message or give me a call – I’m always open to having a
                         conversation!</p>
-                    <div class="phone-no">
+                    <a class="phone-no"
+                       href="tel:+917877595234">
                         <h3><img src="resource/img/phone-call.png">Phone</h3>
                         <p>+91 78775 95234</p>
-                    </div>
-                    <div class="email">
+                    </a>
+                    <a class="email"
+                       href="mailto:kumawataditya105@gmail.com">
                         <h3><img src="resource/img/email.png"> E-mail</h3>
                         <p>kumawataditya105@gmail.com</p>
-                    </div>
-                    <div class="linkedin">
+                    </a>
+                    <a class="linkedin"
+                       href="https://www.linkedin.com/in/adityakumawat105"
+                       target="_blank">
                         <h3><img src="resource/img/linkedin.png"> LinkedIn</h3>
                         <p>adityakumawat105</p>
-                    </div>
+                    </a>
                 </div>
                 <div class="or">Or</div>
                 <div class="contact__card">
@@ -444,11 +448,11 @@
 
     <script>
         window.addEventListener("load", function () {
-            const preloader = document.getElementById('loading');
-            preloader.classList.add('hide-loading');
+            const loading = document.getElementById('loading');
+            loading.classList.add('hide-loading');
             setTimeout(() => {
-                preloader.style.display = 'none';
-            }, 1000); // Optionally remove the preloader after the fade-out transition
+                loading.style.display = 'none';
+            }, 1000); // Optionally remove the loading after the fade-out transition
         });
     </script>
 
