@@ -261,10 +261,13 @@ h3 {
 }
 
 /* about (who am i section) */
-.about-me__who-am-i p span {
-  color: var(--color-purple);
+.about-me__who-am-i p {
+  opacity: var(--opacity-light);
 }
-.about-me__who-am-i p span a {
+.about-me__who-am-i span {
+  /* opacity: 1; */
+}
+.about-me__who-am-i span a {
   text-decoration: none;
   font-weight: bold;
   color: var(--color-purple);
@@ -272,7 +275,7 @@ h3 {
 
 /* about (work experience section) */
 .about-me__work-experience h4 {
-  margin: 1.5rem 0 0.6rem 0;
+  margin: 1.2rem 0 0.6rem 0;
 }
 .about-me__work-experience span {
   color: var(--color-purple);
@@ -280,6 +283,7 @@ h3 {
 .about-me__work-experience ul {
   list-style: disc;
   margin-left: 1.5rem;
+  opacity: var(--opacity-light);
 }
 .about-me__work-experience ul li {
   margin-bottom: 0.3rem;
@@ -310,7 +314,7 @@ h3 {
   padding: 0.5rem;
   flex-grow: 1;
   overflow-y: scroll;
-  border: 1px solid var(--color-white);
+  border: 1px solid #fcfcfc60;
 }
 
 /* direction arrows for about me Splide */
@@ -462,7 +466,7 @@ h3 {
 }
 
 .contact__info {
-  height: calc(100% - 2rem);
+  height: calc(100% - 3rem);
   /* padding: 0 2rem; */
   margin-right: 2rem;
   flex: 1;
