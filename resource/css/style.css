@@ -55,8 +55,7 @@ h3 {
 }
 
 #spinner {
-  border: dashed 0.5rem var(--color-purple);
-  margin: 0 auto;
+  border: dashed 0.6rem var(--color-purple);
   animation-name: spinner-one;
   animation-duration: 2.3s;
   animation-iteration-count: infinite;
@@ -84,7 +83,7 @@ h3 {
   background-color: var(--color-purple);
   height: 1.5rem;
   width: 1.5rem;
-  margin: 0.7rem;
+  margin: 0.8rem;
 
   animation-name: spinner-two;
   animation-duration: 2.3s;
