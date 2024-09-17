@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
     cover: true,
     type: "loop",
     breakpoints: {
-      800: {
+      900: {
         perPage: 2,
         // focus: 0,
       },
@@ -28,14 +28,5 @@ document.addEventListener("DOMContentLoaded", function () {
     pagination: false,
     autoplay: "true",
     interval: 5000,
-    breakpoints: {
-      800: {
-        perPage: 2,
-        // focus: 0,
-      },
-      600: {
-        perPage: 1,
-      },
-    },
   }).mount();
 });

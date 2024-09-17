@@ -4,6 +4,9 @@
 /* OVERALL SETTINGS */
 /* ---------------------------------------- */
 :root {
+  /* font-size: 16px; */
+  font-size: clamp(12px, 1.7vw, 2.3vh);
+
   --color-black: #121212;
   --color-gray: #1d1d1d;
   --color-purple: #a24dbf;
