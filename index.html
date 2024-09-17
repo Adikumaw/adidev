@@ -29,7 +29,8 @@
     </nav>
     <!-- Main fram for plasing sections -->
     <div class="snap-scroll">
-        <div class="main__socials">
+        <div id="socials"
+             class="main__socials">
             <a href="https://www.instagram.com/kumawataditya.17/"
                target="_blank"><img src="resource/img/instagram.png"
                      alt=""></a>
@@ -40,7 +41,13 @@
                target="_blank"><img src="resource/img/github.png"
                      alt=""></a>
         </div>
-        <div class="main__scroll">scroll<img src="resource/img/arrow.png"
+        <div id="scrolls"
+             class="main__scroll"><img id="scroll--up"
+                 class="main__scroll--up"
+                 src="resource/img/arrow.png"
+                 alt=""><span>scroll</span><img id="scroll--down"
+                 class="main__scroll--down visible"
+                 src="resource/img/arrow.png"
                  alt=""></div>
         <!-- Main page / Home page -->
         <header id="home"
@@ -379,6 +386,54 @@
                 </div>
             </div>
         </section>
+        <!-- Footer -->
+        <footer id="footer"
+                class="footer">
+            <div class="contact-prompt">
+                <h2>Ready to start a project or just want to say hi?</h2>
+                <h2 class="footer__contact"><a href="#contact">Let's connect!</a></h2>
+            </div>
+            <div class="footer__container">
+                <!-- Footer Top Section: Links and Info -->
+                <div class="footer__top">
+                    <div class="footer__col">
+                        <h4>About Me</h4>
+                        <p>I'm Aditya Kumawat, a passionate software developer with expertise in multiple technologies,
+                            creating innovative solutions and exploring new challenges.</p>
+                    </div>
+
+                    <div class="footer__col">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#projects">Projects</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer__col">
+                        <h4>Follow Me</h4>
+                        <ul class="footer__socials">
+                            <li><a href="https://www.linkedin.com/in/adityakumawat105"
+                                   target="_blank"><img src="resource/img/linkedin.png"
+                                         alt="">LinkedIn</a></li>
+                            <li><a href="https://github.com/Adikumaw"
+                                   target="_blank"><img src="resource/img/github.png"
+                                         alt="">GitHub</a></li>
+                            <li><a href="mailto:kumawataditya105@gmail.com"><img src="resource/img/email.png"
+                                         alt="">Email</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Footer Bottom Section: Copyright -->
+                <div class="footer__bottom">
+                    <p>&copy; 2024 Aditya Kumawat. All Rights Reserved.</p>
+                </div>
+            </div>
+        </footer>
+
     </div>
     <script type="text/javascript"
             src="resource/js/main.js"></script>
