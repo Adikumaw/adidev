@@ -13,6 +13,12 @@
 </head>
 
 <body>
+    <div id="loading">
+        <div id="spinner">
+            <div id="inside"></div>
+        </div>
+    </div>
+
     <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="navbar__container">
@@ -435,6 +441,17 @@
         </footer>
 
     </div>
+
+    <script>
+        window.addEventListener("load", function () {
+            const preloader = document.getElementById('loading');
+            preloader.classList.add('hide-loading');
+            setTimeout(() => {
+                preloader.style.display = 'none';
+            }, 1000); // Optionally remove the preloader after the fade-out transition
+        });
+    </script>
+
     <script type="text/javascript"
             src="resource/js/main.js"></script>
     <script src="resource/js/splide.min.js"></script>

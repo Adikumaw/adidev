@@ -38,6 +38,86 @@ h3 {
 }
 
 /* ---------------------------------------- */
+/* Preloading screen */
+/* ---------------------------------------- */
+/* Preloader Container */
+#loading {
+  display: grid;
+  place-items: center;
+  z-index: 9999;
+  background-color: var(--color-black);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  transition: all 0.3s ease-in-out;
+}
+
+#spinner {
+  border: dashed 0.5rem var(--color-purple);
+  margin: 0 auto;
+  animation-name: spinner-one;
+  animation-duration: 2.3s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes spinner-one {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(45deg);
+  }
+  50% {
+    transform: scale(0.6) rotate(90deg);
+  }
+  75% {
+    transform: scale(1.2) rotate(270deg);
+  }
+  100% {
+    transform: scale(1) rotate(360deg);
+  }
+}
+
+#inside {
+  background-color: var(--color-purple);
+  height: 1.5rem;
+  width: 1.5rem;
+  margin: 0.7rem;
+
+  animation-name: spinner-two;
+  animation-duration: 2.3s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes spinner-two {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    border-radius: 0;
+    transform: rotate(45deg);
+  }
+  50% {
+    border-radius: 50%;
+    transform: scale(3) rotate(90deg);
+  }
+  75% {
+    transform: scale(1.2) rotate(270deg);
+  }
+  100% {
+    border-radius: 0;
+    transform: scale(1) rotate(360deg);
+  }
+}
+/* Hide Preloader when site is loaded */
+.hide-loading {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* ---------------------------------------- */
 /* SIDE STRIPS */
 /* ---------------------------------------- */
 .main__socials,
