@@ -5,16 +5,17 @@
 /* ---------------------------------------- */
 :root {
   /* font-size: 16px; */
-  font-size: clamp(12px, 1.7vw, 2.3vh);
-
+  font-size: clamp(16px, 1.8vw, 2.3vh);
   --color-black: #121212;
   --color-gray: #1d1d1d;
   --color-purple: #a24dbf;
   --color-white: #fcfcfc;
   --letter-spacing: 0.2rem;
   --sub-heading: 1.3rem;
+  --sub-heading__tablet: 1.5rem;
   --opacity-light: 0.6;
   --navbar-height: 4.5rem;
+  --navbar-height__tablet: 6rem;
 }
 * {
   margin: 0;
@@ -24,9 +25,19 @@
   font-family: "Inter", sans-serif;
 }
 
+html {
+  display: flex;
+  justify-content: center;
+  /* min-height: 480px; */
+  /* align-items: center; */
+}
+
 body {
+  width: 100%;
+  height: 100%;
   position: relative;
   background-color: var(--color-black);
+  /* min-height: 480px; */
 }
 
 /* Sub heading */
@@ -124,8 +135,8 @@ h3 {
 .main__socials,
 .main__scroll {
   z-index: 1;
-  position: fixed;
-  height: 100%;
+  position: absolute;
+  height: 60%;
   width: 1.2rem;
   display: flex;
   flex-direction: column;
@@ -143,6 +154,7 @@ h3 {
 }
 .main__socials.hide {
   transform: translateX(-5rem);
+  opacity: 0;
 }
 .main__socials img {
   margin-top: 1.2em;
@@ -164,6 +176,7 @@ h3 {
 }
 .main__scroll.hide {
   transform: translateX(5rem);
+  opacity: 0;
 }
 .main__scroll span {
   font-size: 0.8rem;
@@ -255,7 +268,7 @@ h3 {
 /* NAVIGATION PANEL */
 /* ---------------------------------------- */
 .navbar {
-  position: fixed;
+  position: absolute;
   z-index: 1;
   top: 0;
   display: flex;
@@ -386,6 +399,13 @@ h3 {
   height: 100%;
 }
 
+.about-me__who-am-i,
+.about-me__skills,
+.about-me__work-experience {
+  height: 95%;
+  overflow: hidden;
+  overflow-y: scroll;
+}
 /* about content h3 styling */
 .about-me__who-am-i h3,
 .about-me__skills h3,
@@ -459,6 +479,7 @@ h3 {
   bottom: 0.5rem;
 }
 .about-me__splide .splide__arrow {
+  font-size: 0.8rem;
   position: absolute;
   bottom: 0;
   letter-spacing: var(--letter-spacing);
@@ -583,7 +604,20 @@ h3 {
 }
 /* Project card pagination */
 .projects__splide .splide__pagination li {
+  width: 1rem;
+  height: 1rem;
   margin: 0 0.3rem;
+  display: grid;
+  place-items: center;
+}
+
+.projects__splide .splide__pagination li button {
+  transform: scale(0.8);
+  width: 70%;
+  height: 70%;
+}
+.projects__splide .splide__pagination li button.is-active {
+  transform: scale(1);
 }
 
 /* ---------------------------------------- */
@@ -608,6 +642,15 @@ h3 {
   justify-content: space-around;
 }
 
+.contact__info .contact__heading {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
 .contact__info .contact__para {
   text-align: center;
   width: 90%;
@@ -615,6 +658,15 @@ h3 {
 
 .contact__info p {
   opacity: var(--opacity-light);
+}
+
+.contact__info .contact__links {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .contact__info .phone-no,
@@ -744,6 +796,7 @@ h3 {
 
 /* Contact Prompt Section */
 .contact-prompt {
+  width: calc(100% - 8%);
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -782,13 +835,13 @@ h3 {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   gap: 4rem;
 }
 
 .footer__col {
   flex: 1;
-  min-width: 250px;
+  /* min-width: 250px; */
 }
 
 .footer__col p {
@@ -846,4 +899,487 @@ h3 {
 .footer__bottom p {
   font-size: 0.9rem;
   opacity: var(--opacity-light);
+}
+
+/* ------------------------------------------ */
+/* Responsive design */
+/* For mini landscape devices */
+/* ------------------------------------------ */
+
+/* ---------------------------------------- */
+/* HEADER */
+/* ---------------------------------------- */
+.miniLandscape .main__info h6 {
+  font-size: 0.7rem;
+  margin-right: 21.5rem;
+}
+.miniLandscape .main__name {
+  font-size: 8rem;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+.miniLandscape .main__info h4 {
+  margin-top: -1.5rem;
+  font-size: 1rem;
+  margin-left: 26.5rem;
+}
+.miniLandscape .main__title {
+  margin-top: 0.8rem;
+  font-size: 1.2rem;
+  margin-right: 17.5rem;
+}
+
+/* ---------------------------------------- */
+/* ABOUT ME */
+/* ---------------------------------------- */
+
+/* about content section */
+.miniLandscape .about-me__content {
+  height: calc(100% - 3rem);
+  width: calc(58% - 3rem);
+  padding: 1.5rem;
+  line-height: 1.1rem;
+}
+
+/* about (skills section) */
+.miniLandscape .about-me__skills .skills {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+/* ---------------------------------------- */
+/* Contact me */
+/* ---------------------------------------- */
+
+/* main contact card */
+.miniLandscape .contact__container {
+  gap: 1rem;
+}
+
+.miniLandscape .contact__info .contact__para {
+  width: 95%;
+}
+
+/* ---------------------------------------- */
+/* Footer section */
+/* ---------------------------------------- */
+
+/* Contact Prompt Section Heading*/
+.miniLandscape .contact-prompt h2 {
+  font-size: 1.2rem;
+}
+
+/* ------------------------------------------ */
+/* Responsive design */
+/* For Tablet devices */
+/* ------------------------------------------ */
+
+/* ---------------------------------------- */
+/* SECTIONS */
+/* ---------------------------------------- */
+
+/* Sub heading */
+.tablet h2 {
+  font-size: 2.8rem;
+}
+.tablet h3 {
+  font-size: var(--sub-heading__tablet);
+}
+
+.tablet .main,
+.tablet .projects,
+.tablet .about-me,
+.tablet .contact,
+.tablet .footer {
+  height: calc(100% - var(--navbar-height__tablet));
+  padding-top: var(--navbar-height__tablet);
+}
+
+/* ---------------------------------------- */
+/* NAVIGATION PANEL */
+/* ---------------------------------------- */
+
+.tablet .navbar {
+  height: var(--navbar-height__tablet);
+}
+
+.tablet .navbar__links {
+  font-size: 1.1rem;
+}
+
+/* ---------------------------------------- */
+/* SIDE STRIPS */
+/* ---------------------------------------- */
+.tablet .main__socials,
+.tablet .main__scroll {
+  width: 1.5rem;
+}
+/* ---------------------------------------- */
+/* Socials bar left */
+/* ---------------------------------------- */
+.tablet .main__socials img {
+  margin-top: 1.5em;
+}
+/* ---------------------------------------- */
+/* Socials bar right */
+/* ---------------------------------------- */
+.tablet .main__scroll span {
+  font-size: 1.2rem;
+}
+
+/* ---------------------------------------- */
+/* HEADER */
+/* ---------------------------------------- */
+.tablet .main__container {
+  margin-bottom: var(--navbar-height__tablet);
+}
+
+/* ---------------------------------------- */
+/* ABOUT ME */
+/* ---------------------------------------- */
+/* main about card */
+.tablet .about-me__container {
+  height: 85%;
+  width: 70%;
+  flex-direction: column;
+}
+/* about image section */
+.tablet .about-me__image {
+  height: 42%;
+  width: auto;
+}
+.tablet .about-me__image img {
+  height: 100%;
+  width: auto;
+}
+/* about content section */
+.tablet .about-me__content {
+  height: calc(58% - 5rem);
+  width: calc(100% - 5rem);
+}
+
+.tablet .about-me__splide .splide__arrow {
+  font-size: 0.9rem;
+}
+.tablet .about-me__splide .splide__arrow img {
+  width: 1.2rem;
+}
+
+/* ---------------------------------------- */
+/* Projects */
+/* ---------------------------------------- */
+
+/* main projects container */
+.tablet .projects__container {
+  height: 80%;
+}
+
+/* projects card styling */
+.tablet .project-card {
+  height: 85%;
+  width: 95%;
+  margin: 7.5% 2.5%;
+  border-radius: 0.7rem;
+}
+
+.tablet .project-card__title {
+  font-size: 1.6rem;
+}
+
+.tablet .project-card__link {
+  padding: 0.9rem 1.6rem;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+/* ---------------------------------------- */
+/* Contact me */
+/* ---------------------------------------- */
+/* main contact card */
+.tablet .contact__container {
+  height: 80%;
+  width: 70%;
+  flex-direction: column;
+}
+
+.tablet .contact__info {
+  width: 100%;
+}
+
+.tablet .contact__info .contact__links {
+  width: 100%;
+  flex-direction: row;
+}
+
+/* OR SEPARATOR */
+.tablet .or {
+  font-size: 1rem;
+}
+/* CONTACT FORM CARD */
+.tablet .contact__card {
+  width: 100%;
+  flex: 2;
+  background-image: url("img/contact_bg__tablet.jpg");
+  margin-left: 0;
+  border-radius: 0.7rem;
+}
+
+.tablet .contact__card h2 {
+  font-size: 1.8rem;
+}
+.tablet .contact-form button {
+  padding: 0.8rem 1.5rem;
+}
+
+/* ---------------------------------------- */
+/* Footer section */
+/* ---------------------------------------- */
+
+.tablet .contact-prompt h2 {
+  font-size: 1.5rem;
+}
+
+/* ------------------------------------------ */
+/* Responsive design */
+/* For Mobile devices */
+/* ------------------------------------------ */
+
+/* ---------------------------------------- */
+/* SECTIONS */
+/* ---------------------------------------- */
+
+/* Sub heading */
+.mobile h2 {
+  font-size: 2.8rem;
+}
+.mobile h3 {
+  font-size: var(--sub-heading__tablet);
+}
+
+.mobile .main,
+.mobile .projects,
+.mobile .about-me,
+.mobile .contact,
+.mobile .footer {
+  height: calc(100% - var(--navbar-height__tablet));
+  padding-top: var(--navbar-height__tablet);
+}
+
+/* ---------------------------------------- */
+/* NAVIGATION PANEL */
+/* ---------------------------------------- */
+
+/* Common Styles */
+.navbar {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  height: var(--navbar-height);
+  width: 100%;
+}
+
+.navbar__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  width: 92%;
+}
+
+.navbar__logo {
+  height: 65%;
+  cursor: pointer;
+}
+
+/* Hamburger Menu */
+.navbar__hamburger {
+  z-index: 999;
+  font-size: 2rem;
+  color: var(--color-white);
+  cursor: pointer;
+  display: none;
+}
+
+/* Mobile Menu Hidden */
+.navbar__mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -50%;
+  height: 100vh;
+  width: 50%;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px) brightness(3.5);
+  transition: right 0.3s ease-in-out;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+}
+
+.mobile-menu__list {
+  list-style-type: none;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100%;
+}
+
+.mobile-menu__links a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  opacity: 0.8;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.mobile-menu__links a:hover {
+  opacity: 1;
+}
+
+/* Mobile-Specific Styles */
+.mobile .navbar__list {
+  display: none;
+}
+
+.mobile .navbar__hamburger {
+  display: block;
+}
+
+.mobile .navbar__mobile-menu.active {
+  right: 0;
+}
+
+/* ---------------------------------------- */
+/* SIDE STRIPS */
+/* ---------------------------------------- */
+.mobile .main__socials,
+.mobile .main__scroll {
+  width: 1.5rem;
+}
+/* ---------------------------------------- */
+/* Socials bar left */
+/* ---------------------------------------- */
+.mobile .main__socials img {
+  margin-top: 1.5em;
+}
+/* ---------------------------------------- */
+/* Socials bar right */
+/* ---------------------------------------- */
+.mobile .main__scroll span {
+  font-size: 1.2rem;
+}
+
+/* ---------------------------------------- */
+/* HEADER */
+/* ---------------------------------------- */
+.mobile .main__container {
+  margin-bottom: var(--navbar-height__tablet);
+}
+
+/* ---------------------------------------- */
+/* ABOUT ME */
+/* ---------------------------------------- */
+/* main about card */
+.mobile .about-me__container {
+  height: 85%;
+  width: 70%;
+  flex-direction: column;
+}
+/* about image section */
+.mobile .about-me__image {
+  height: 42%;
+  width: auto;
+}
+.mobile .about-me__image img {
+  height: 100%;
+  width: auto;
+}
+/* about content section */
+.mobile .about-me__content {
+  height: calc(58% - 5rem);
+  width: calc(100% - 5rem);
+}
+
+.mobile .about-me__splide .splide__arrow {
+  font-size: 0.9rem;
+}
+.mobile .about-me__splide .splide__arrow img {
+  width: 1.2rem;
+}
+
+/* ---------------------------------------- */
+/* Projects */
+/* ---------------------------------------- */
+
+/* main projects container */
+.mobile .projects__container {
+  height: 80%;
+}
+
+/* projects card styling */
+.mobile .project-card {
+  height: 85%;
+  width: 95%;
+  margin: 7.5% 2.5%;
+  border-radius: 0.7rem;
+}
+
+.mobile .project-card__title {
+  font-size: 1.6rem;
+}
+
+.mobile .project-card__link {
+  padding: 0.9rem 1.6rem;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+/* ---------------------------------------- */
+/* Contact me */
+/* ---------------------------------------- */
+/* main contact card */
+.mobile .contact__container {
+  height: 80%;
+  width: 70%;
+  flex-direction: column;
+}
+
+.mobile .contact__info {
+  width: 100%;
+}
+
+.mobile .contact__info .contact__links {
+  width: 100%;
+  flex-direction: row;
+}
+
+/* OR SEPARATOR */
+.mobile .or {
+  font-size: 1rem;
+}
+/* CONTACT FORM CARD */
+.mobile .contact__card {
+  width: 100%;
+  flex: 2;
+  background-image: url("img/contact_bg__tablet.jpg");
+  margin-left: 0;
+  border-radius: 0.7rem;
+}
+
+.mobile .contact__card h2 {
+  font-size: 1.8rem;
+}
+.mobile .contact-form button {
+  padding: 0.8rem 1.5rem;
+}
+
+/* ---------------------------------------- */
+/* Footer section */
+/* ---------------------------------------- */
+
+.mobile .contact-prompt h2 {
+  font-size: 1.5rem;
 }

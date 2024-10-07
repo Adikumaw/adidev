@@ -19,42 +19,60 @@
         </div>
     </div>
 
+
+    <div id="socials"
+         class="main__socials">
+        <a href="https://www.instagram.com/kumawataditya.17/"
+           target="_blank"><img src="resource/img/instagram.png"
+                 alt=""></a>
+        <a href="https://www.linkedin.com/in/adityakumawat105"
+           target="_blank"><img src="resource/img/linkedin.png"
+                 alt=""></a>
+        <a href="https://github.com/AdiKumaw"
+           target="_blank"><img src="resource/img/github.png"
+                 alt=""></a>
+    </div>
+    <div id="scrolls"
+         class="main__scroll"><img id="scroll--up"
+             class="main__scroll--up"
+             src="resource/img/arrow.png"
+             alt=""><span>scroll</span><img id="scroll--down"
+             class="main__scroll--down visible"
+             src="resource/img/arrow.png"
+             alt=""></div>
+
     <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="navbar__container">
             <img class="navbar__logo"
                  src="resource/img/logo.png"
                  alt="logo">
+            <!-- Hamburger Icon for Mobile View -->
+            <div class="navbar__hamburger"
+                 onclick="toggleMenu()">
+                &#9776;
+            </div>
             <ul class="navbar__list">
                 <li class="navbar__links"><a href="#home">Home</a></li>
                 <li class="navbar__links"><a href="#about">About</a></li>
                 <li class="navbar__links"><a href="#projects">Projects</a></li>
                 <li class="navbar__links"><a href="#contact">Contact</a></li>
             </ul>
+            <!-- Mobile Menu -->
+            <div class="navbar__mobile-menu"
+                 id="mobileMenu">
+                <ul class="mobile-menu__list">
+                    <li class="mobile-menu__links"><a href="#home">Home</a></li>
+                    <li class="mobile-menu__links"><a href="#about">About</a></li>
+                    <li class="mobile-menu__links"><a href="#projects">Projects</a></li>
+                    <li class="mobile-menu__links"><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
         </div>
     </nav>
+
     <!-- Main fram for plasing sections -->
     <div class="snap-scroll">
-        <div id="socials"
-             class="main__socials">
-            <a href="https://www.instagram.com/kumawataditya.17/"
-               target="_blank"><img src="resource/img/instagram.png"
-                     alt=""></a>
-            <a href="https://www.linkedin.com/in/adityakumawat105"
-               target="_blank"><img src="resource/img/linkedin.png"
-                     alt=""></a>
-            <a href="https://github.com/AdiKumaw"
-               target="_blank"><img src="resource/img/github.png"
-                     alt=""></a>
-        </div>
-        <div id="scrolls"
-             class="main__scroll"><img id="scroll--up"
-                 class="main__scroll--up"
-                 src="resource/img/arrow.png"
-                 alt=""><span>scroll</span><img id="scroll--down"
-                 class="main__scroll--down visible"
-                 src="resource/img/arrow.png"
-                 alt=""></div>
         <!-- Main page / Home page -->
         <header id="home"
                 class="main">
@@ -227,7 +245,7 @@
                      class="projects__splide splide">
                     <div class="splide__track">
                         <ul class="splide__list">
-                            <li class="splide__slide">
+                            <li class="splide__slide projects__splide__slide">
                                 <div class="project-card">
                                     <header class="project-card__header">
                                         <h2 class="project-card__title">rubix cube solver</h2>
@@ -246,7 +264,7 @@
                                     </footer>
                                 </div>
                             </li>
-                            <li class="splide__slide">
+                            <li class="splide__slide projects__splide__slide">
                                 <div class="project-card">
                                     <header class="project-card__header">
                                         <h2 class="project-card__title">Stella</h2>
@@ -265,7 +283,7 @@
                                     </footer>
                                 </div>
                             </li>
-                            <li class="splide__slide">
+                            <li class="splide__slide projects__splide__slide">
                                 <div class="project-card">
                                     <header class="project-card__header">
                                         <h2 class="project-card__title">EMS</h2>
@@ -284,7 +302,7 @@
                                     </footer>
                                 </div>
                             </li>
-                            <li class="splide__slide">
+                            <li class="splide__slide projects__splide__slide">
                                 <div class="project-card">
                                     <header class="project-card__header">
                                         <h2 class="project-card__title">Smart Calculator
@@ -304,7 +322,7 @@
                                     </footer>
                                 </div>
                             </li>
-                            <li class="splide__slide">
+                            <li class="splide__slide projects__splide__slide">
                                 <div class="project-card">
                                     <header class="project-card__header">
                                         <h2 class="project-card__title">Space Tourism</h2>
@@ -323,7 +341,7 @@
                                     </footer>
                                 </div>
                             </li>
-                            <li class="splide__slide">
+                            <li class="splide__slide projects__splide__slide">
                                 <div class="project-card">
                                     <header class="project-card__header">
                                         <h2 class="project-card__title">callbreak-tracker</h2>
@@ -352,26 +370,31 @@
                  class="contact">
             <div class="contact__container">
                 <div class="contact__info">
-                    <h2>Get in Touch</h2>
-                    <p class="contact__para">If you have any questions or would like to connect, don’t hesitate to reach
-                        out. Feel free to send me a message or give me a call – I’m always open to having a
-                        conversation!</p>
-                    <a class="phone-no"
-                       href="tel:+917877595234">
-                        <h3><img src="resource/img/phone-call.png">Phone</h3>
-                        <p>+91 78775 95234</p>
-                    </a>
-                    <a class="email"
-                       href="mailto:kumawataditya105@gmail.com">
-                        <h3><img src="resource/img/email.png"> E-mail</h3>
-                        <p>kumawataditya105@gmail.com</p>
-                    </a>
-                    <a class="linkedin"
-                       href="https://www.linkedin.com/in/adityakumawat105"
-                       target="_blank">
-                        <h3><img src="resource/img/linkedin.png"> LinkedIn</h3>
-                        <p>adityakumawat105</p>
-                    </a>
+                    <div class="contact__heading">
+                        <h2>Get in Touch</h2>
+                        <p class="contact__para">If you have any questions or would like to connect, don’t hesitate to
+                            reach
+                            out. Feel free to send me a message or give me a call – I’m always open to having a
+                            conversation!</p>
+                    </div>
+                    <div class="contact__links">
+                        <a class="phone-no"
+                           href="tel:+917877595234">
+                            <h3><img src="resource/img/phone-call.png">Phone</h3>
+                            <p>+91 78775 95234</p>
+                        </a>
+                        <a class="email"
+                           href="mailto:kumawataditya105@gmail.com">
+                            <h3><img src="resource/img/email.png"> E-mail</h3>
+                            <p>kumawataditya105@gmail.com</p>
+                        </a>
+                        <a class="linkedin"
+                           href="https://www.linkedin.com/in/adityakumawat105"
+                           target="_blank">
+                            <h3><img src="resource/img/linkedin.png"> LinkedIn</h3>
+                            <p>adityakumawat105</p>
+                        </a>
+                    </div>
                 </div>
                 <div class="or">Or</div>
                 <div class="contact__card">
