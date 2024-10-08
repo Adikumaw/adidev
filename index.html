@@ -402,8 +402,7 @@
                 <div class="or">Or</div>
                 <div class="contact__card">
                     <h2>Contact</h2>
-                    <form action="https://formspree.io/f/{your-email}"
-                          method="POST"
+                    <form id="contact-form"
                           class="contact-form">
                         <input type="text"
                                name="name"
@@ -417,7 +416,8 @@
                                   rows="5"
                                   placeholder="Your Message"
                                   required></textarea>
-                        <button type="submit">Send Message</button>
+                        <button type="submit"
+                                value="Send">Send Message</button>
                     </form>
                 </div>
             </div>
@@ -469,7 +469,7 @@
                 </div>
             </div>
         </footer>
-
+        <!-- action="https://formspree.io/f/{your-email}" -->
     </div>
 
     <script>
@@ -481,11 +481,13 @@
             }, 1000); // Optionally remove the loading after the fade-out transition
         });
     </script>
-
+    <script type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script type="text/javascript"
             src="resource/js/main.js"></script>
     <script src="resource/js/splide.min.js"></script>
     <script src="resource/js/splide.js"></script>
+    <script src="resource/js/email.js"></script>
 </body>
 
 </html>
