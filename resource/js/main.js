@@ -25,24 +25,22 @@ function adjustLayout() {
     console.log("mini Landscape ratio");
     body.classList.add("miniLandscape");
 
-    // set root font size
     document.documentElement.style.fontSize = "clamp(12px, 1.8vw, 2.3vh)";
   } else if (ratio < tabletRatio && ratio >= mobileRatio) {
     console.log("tablet ratio");
     body.classList.add("tablet");
-
-    // set root font size
-    document.documentElement.style.fontSize = "clamp(16px, 2.1vw, 1.5vh)";
+    document.documentElement.style.fontSize = "clamp(10px, 2.1vw, 1.5vh)";
   } else if (ratio < mobileRatio) {
     console.log("mobile ratio");
     body.classList.add("mobile");
+
+    document.documentElement.style.fontSize = "clamp(6px, 2.8vw, 1.4vh)";
   } else {
     console.log("Landscape ratio");
     body.style.width = "100%";
     body.style.marginLeft = "0";
     body.style.marginRight = "0";
 
-    // set root font size
     document.documentElement.style.fontSize = "clamp(12px, 1.8vw, 2.3vh)";
   }
 }
@@ -52,15 +50,39 @@ window.addEventListener("resize", adjustLayout);
 window.addEventListener("orientationchange", adjustLayout);
 adjustLayout(); // Initial call to adjust layout on page load
 
+/**
+ * 2. Mobile Menu Control
+ * Handles the toggling of the mobile menu and closes the menu when clicking outside.
+ */
+
 // Toggle mobile menu
 function toggleMenu() {
   const mobileMenu = document.getElementById("mobileMenu");
   mobileMenu.classList.toggle("active");
+  const hamburger = document.getElementById("hamburger");
+  hamburger.classList.toggle("close");
 }
 
+// Close menu when clicking outside
+document.addEventListener("click", function (event) {
+  const mobileMenu = document.getElementById("mobileMenu");
+  const hamburger = document.getElementById("hamburger");
+  const hamburgerContainer = document.querySelector(".navbar__hamburger");
+
+  if (
+    !mobileMenu.contains(event.target) &&
+    !hamburgerContainer.contains(event.target)
+  ) {
+    if (mobileMenu.classList.contains("active")) {
+      mobileMenu.classList.remove("active");
+      hamburger.classList.toggle("close");
+    }
+  }
+});
+
 /**
- * 2. Scroll Section Visibility Control
- * This section handles showing or hiding the up/down scroll indicators based on the current section in view.
+ * 3. Scroll Section Visibility Control
+ * Handles the visibility of scroll indicators (up/down arrows) based on the section in view.
  */
 
 const socialLinks = document.getElementById("socials");
@@ -76,10 +98,7 @@ const snapScrollElement = document.querySelector(".snap-scroll");
 
 let lastScrollTop = 0; // Store the last scroll position to detect scroll direction
 
-/**
- * Function: isInView
- * Checks if an element is in view based on scroll direction.
- */
+// Check if an element is in view based on scroll direction
 function isInView(element, direction) {
   const rect = element.getBoundingClientRect();
   var top = rect.top + 1;
@@ -93,10 +112,7 @@ function isInView(element, direction) {
   return false;
 }
 
-/**
- * Function: toggleScrollVisibility
- * Shows or hides the scroll arrow indicators.
- */
+// Toggle scroll visibility for the arrows
 function toggleScrollVisibility(element, visibility) {
   if (visibility) {
     element.classList.add("visible");
@@ -105,7 +121,7 @@ function toggleScrollVisibility(element, visibility) {
   }
 }
 
-// Add scroll event listener on the snapScrollElement to detect scroll behavior
+// Detect scroll behavior and adjust the visibility of the up/down scroll arrows
 snapScrollElement.addEventListener("scroll", () => {
   let scrollTop = snapScrollElement.scrollTop;
 
@@ -146,8 +162,8 @@ snapScrollElement.addEventListener("scroll", () => {
 });
 
 /**
- * 3. Section Scroll Control
- * Handles scrolling to the next or previous section when clicking the up/down arrows.
+ * 4. Section Scroll Control
+ * Handles the scrolling between sections when clicking the up/down arrows.
  */
 
 const sections = [
@@ -158,18 +174,12 @@ const sections = [
   footer,
 ];
 
-/**
- * Function: scrollToSection
- * Scrolls smoothly to the given section.
- */
+// Scroll smoothly to a specific section
 function scrollToSection(section) {
   section.scrollIntoView({ behavior: "smooth" });
 }
 
-/**
- * Function: getCurrentSectionIndex
- * Returns the index of the section currently in view.
- */
+// Get the index of the currently visible section
 function getCurrentSectionIndex() {
   const scrollPosition = snapScrollElement.scrollTop + window.innerHeight / 2;
 
@@ -184,7 +194,7 @@ function getCurrentSectionIndex() {
   return -1;
 }
 
-// Scroll event listeners for up/down arrow buttons
+// Scroll to the next or previous section when clicking the down or up arrow
 scrollDown.addEventListener("click", () => {
   const currentIndex = getCurrentSectionIndex();
   if (currentIndex < sections.length - 1) {
@@ -200,8 +210,8 @@ scrollUp.addEventListener("click", () => {
 });
 
 /**
- * 4. Skills Section
- * This section handles the click behavior on skill icons and displays corresponding information.
+ * 5. Skills Section
+ * Handles displaying information for each skill when its icon is clicked.
  */
 
 // Get references to the skills container and skill description element

@@ -26,8 +26,11 @@
 }
 
 html {
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
+  overflow: hidden;
   /* min-height: 480px; */
   /* align-items: center; */
 }
@@ -35,8 +38,10 @@ html {
 body {
   width: 100%;
   height: 100%;
+  overflow: hidden;
   position: relative;
   background-color: var(--color-black);
+  /* overflow: hidden; */
   /* min-height: 480px; */
 }
 
@@ -1032,7 +1037,21 @@ h3 {
 .tablet .main__container {
   margin-bottom: var(--navbar-height__tablet);
 }
-
+.tablet .main__info h6 {
+  margin-right: 21.5rem;
+}
+.tablet .main__name {
+  font-size: 8rem;
+}
+.tablet .main__info h4 {
+  margin-top: -1.5rem;
+  margin-left: 26.5rem;
+}
+.tablet .main__title {
+  /* margin-top: 0.8rem; */
+  font-size: 1.4rem;
+  margin-right: 15.5rem;
+}
 /* ---------------------------------------- */
 /* ABOUT ME */
 /* ---------------------------------------- */
@@ -1169,36 +1188,51 @@ h3 {
 /* ---------------------------------------- */
 
 /* Common Styles */
-.navbar {
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  display: flex;
-  justify-content: center;
-  height: var(--navbar-height);
-  width: 100%;
+.mobile .navbar {
+  height: var(--navbar-height__tablet);
 }
 
-.navbar__container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 100%;
+.mobile .navbar__container {
   width: 92%;
 }
 
 .navbar__logo {
-  height: 65%;
-  cursor: pointer;
+  height: 58%;
 }
 
 /* Hamburger Menu */
-.navbar__hamburger {
+.mobile .navbar__hamburger {
   z-index: 999;
-  font-size: 2rem;
+  height: 2.2rem;
+  width: 2.2rem;
   color: var(--color-white);
   cursor: pointer;
   display: none;
+}
+
+.mobile .navbar__hamburger-line1,
+.mobile .navbar__hamburger-line2,
+.mobile .navbar__hamburger-line3 {
+  opacity: var(--opacity-light);
+  width: 100%;
+  background-color: #fcfcfc;
+  height: 10%;
+  margin-top: 20%;
+  transition: all 0.3s ease-in-out;
+}
+
+.close .navbar__hamburger-line1 {
+  transform: rotate(45deg) translate(20%, 200%);
+  opacity: 1;
+}
+
+.close .navbar__hamburger-line2 {
+  opacity: 0;
+}
+
+.close .navbar__hamburger-line3 {
+  transform: rotate(-45deg) translate(20%, -240%);
+  opacity: 1;
 }
 
 /* Mobile Menu Hidden */
@@ -1209,10 +1243,9 @@ h3 {
   height: 100vh;
   width: 50%;
   background: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(5px) brightness(3.5);
+  backdrop-filter: blur(2px) brightness(3.5);
   transition: right 0.3s ease-in-out;
   z-index: 2;
-  display: flex;
   align-items: center;
 }
 
@@ -1221,7 +1254,9 @@ h3 {
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  /* justify-content: space-evenly; */
+  gap: 5rem;
+  margin-top: 10rem;
   align-items: center;
   height: 100%;
 }
@@ -1258,6 +1293,7 @@ h3 {
 .mobile .main__socials,
 .mobile .main__scroll {
   width: 1.5rem;
+  min-width: 18px;
 }
 /* ---------------------------------------- */
 /* Socials bar left */
@@ -1278,13 +1314,33 @@ h3 {
 .mobile .main__container {
   margin-bottom: var(--navbar-height__tablet);
 }
-
+.mobile .main__info h6 {
+  font-size: 0.9rem;
+  margin-right: 20.5rem;
+}
+.mobile .main__name {
+  font-size: 8rem;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+.mobile .main__info h4 {
+  margin-top: -1.5rem;
+  font-size: 1rem;
+  margin-left: 26.5rem;
+}
+.mobile .main__title {
+  width: 16rem;
+  margin-top: 0.8rem;
+  font-size: 1.2rem;
+  margin-right: 15.5rem;
+}
 /* ---------------------------------------- */
 /* ABOUT ME */
 /* ---------------------------------------- */
 /* main about card */
 .mobile .about-me__container {
-  height: 85%;
+  margin-bottom: 10%;
+  height: 75%;
   width: 70%;
   flex-direction: column;
 }
@@ -1299,12 +1355,27 @@ h3 {
 }
 /* about content section */
 .mobile .about-me__content {
-  height: calc(58% - 5rem);
-  width: calc(100% - 5rem);
+  height: calc(58% - 4rem);
+  width: calc(100% - 4rem);
+  padding: 2rem;
+  line-height: 1.1rem;
+}
+
+/* about (work experience section) */
+.mobile .about-me__work-experience h4 {
+  margin: 0.8rem 0 0.4rem 0;
+}
+
+.mobile .about-me__work-experience ul li {
+  margin-bottom: 0.2rem;
+}
+/* about (skills section) */
+.mobile .about-me__skills .skills {
+  grid-template-columns: repeat(6, 1fr);
 }
 
 .mobile .about-me__splide .splide__arrow {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 }
 .mobile .about-me__splide .splide__arrow img {
   width: 1.2rem;
@@ -1316,14 +1387,16 @@ h3 {
 
 /* main projects container */
 .mobile .projects__container {
-  height: 80%;
+  height: 70%;
+  width: 80%;
+  margin-bottom: 10%;
 }
 
 /* projects card styling */
 .mobile .project-card {
   height: 85%;
-  width: 95%;
-  margin: 7.5% 2.5%;
+  width: 88%;
+  margin: 7.5% 6%;
   border-radius: 0.7rem;
 }
 
@@ -1334,7 +1407,6 @@ h3 {
 .mobile .project-card__link {
   padding: 0.9rem 1.6rem;
   font-size: 1rem;
-  font-weight: bold;
 }
 
 /* ---------------------------------------- */
@@ -1342,6 +1414,7 @@ h3 {
 /* ---------------------------------------- */
 /* main contact card */
 .mobile .contact__container {
+  margin-bottom: 10%;
   height: 80%;
   width: 70%;
   flex-direction: column;
@@ -1351,9 +1424,19 @@ h3 {
   width: 100%;
 }
 
+.mobile .contact__info h2 {
+  margin-bottom: 1rem;
+}
+
+.mobile .contact__info .contact__para {
+  width: 100%;
+}
+
 .mobile .contact__info .contact__links {
   width: 100%;
+  margin: 0.5rem;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 
 /* OR SEPARATOR */
@@ -1382,4 +1465,17 @@ h3 {
 
 .mobile .contact-prompt h2 {
   font-size: 1.5rem;
+}
+
+.mobile .footer__container {
+  width: calc(100% - 12%);
+  padding: 8% 6%;
+}
+
+.mobile .footer__top {
+  flex-wrap: wrap;
+}
+
+.mobile .footer__col:first-of-type {
+  min-width: 100%;
 }
