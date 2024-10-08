@@ -6,6 +6,7 @@
 :root {
   /* font-size: 16px; */
   font-size: clamp(16px, 1.8vw, 2.3vh);
+  font-size: clamp(16px, 1.8vw, 2.3dvh);
   --color-black: #121212;
   --color-gray: #1d1d1d;
   --color-purple: #a24dbf;
@@ -15,7 +16,7 @@
   --sub-heading__tablet: 1.5rem;
   --opacity-light: 0.6;
   --navbar-height: 4.5rem;
-  --navbar-height__tablet: 6rem;
+  --navbar-height__Portrait: 6rem;
 }
 * {
   margin: 0;
@@ -25,24 +26,22 @@
   font-family: "Inter", sans-serif;
 }
 
-html {
+body,
+.snap-scroll {
+  min-width: 700px;
+  min-height: 400px;
   width: 100%;
   height: 100%;
+}
+
+html {
   display: flex;
   justify-content: center;
-  overflow: hidden;
-  /* min-height: 480px; */
-  /* align-items: center; */
 }
 
 body {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
   position: relative;
   background-color: var(--color-black);
-  /* overflow: hidden; */
-  /* min-height: 480px; */
 }
 
 /* Sub heading */
@@ -68,6 +67,7 @@ h3 {
   top: 0;
   left: 0;
   height: 100vh;
+  height: 100dvh;
   width: 100vw;
   transition: all 0.3s ease-in-out;
 }
@@ -140,7 +140,7 @@ h3 {
 .main__socials,
 .main__scroll {
   z-index: 1;
-  position: absolute;
+  position: fixed;
   height: 60%;
   width: 1.2rem;
   display: flex;
@@ -148,9 +148,8 @@ h3 {
   align-items: center;
   justify-content: end;
 }
-/* ---------------------------------------- */
+
 /* Socials bar left */
-/* ---------------------------------------- */
 .main__socials {
   left: 4%;
   bottom: 4%;
@@ -170,9 +169,8 @@ h3 {
 .main__socials img:hover {
   opacity: 1;
 }
-/* ---------------------------------------- */
+
 /* Socials bar right */
-/* ---------------------------------------- */
 .main__scroll {
   right: 4%;
   bottom: 4%;
@@ -226,6 +224,7 @@ h3 {
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
   height: 100vh;
+  height: 100dvh;
   scroll-behavior: smooth;
   position: relative;
 }
@@ -248,7 +247,7 @@ h3 {
   scroll-snap-align: start;
 }
 /* ---------------------------------------- */
-/* SECTIONS */
+/* CONTAINERS */
 /* ---------------------------------------- */
 .main__container,
 .about-me__container,
@@ -269,6 +268,7 @@ h3 {
 .footer {
   background-color: #12121271;
 }
+
 /* ---------------------------------------- */
 /* NAVIGATION PANEL */
 /* ---------------------------------------- */
@@ -322,9 +322,6 @@ h3 {
 /* ---------------------------------------- */
 /* HEADER */
 /* ---------------------------------------- */
-.main {
-}
-
 .main__container {
   margin-bottom: var(--navbar-height);
 }
@@ -422,9 +419,6 @@ h3 {
 /* about (who am i section) */
 .about-me__who-am-i p {
   opacity: var(--opacity-light);
-}
-.about-me__who-am-i span {
-  /* opacity: 1; */
 }
 .about-me__who-am-i span a {
   text-decoration: none;
@@ -709,7 +703,7 @@ h3 {
 .contact__card {
   flex: 1;
   position: relative;
-  background-image: url("img/contact_bg.jpg");
+  background-image: url("img/contact_bg__landscape.jpg");
   background-size: cover;
   background-position: center;
   height: 90%;
@@ -793,9 +787,7 @@ h3 {
 /* ---------------------------------------- */
 /* Footer section */
 /* ---------------------------------------- */
-/* Footer Styles */
 .footer {
-  /* align-items: end; */
   flex-direction: column;
 }
 
@@ -809,8 +801,6 @@ h3 {
   justify-content: center;
   background-color: none; /* Light background to contrast with footer */
   text-align: center;
-  /* font-size: 18px; */
-  /* color: #333; */
 }
 
 .contact-prompt h2 {
@@ -840,13 +830,11 @@ h3 {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  /* flex-wrap: wrap; */
   gap: 4rem;
 }
 
 .footer__col {
   flex: 1;
-  /* min-width: 250px; */
 }
 
 .footer__col p {
@@ -906,10 +894,15 @@ h3 {
   opacity: var(--opacity-light);
 }
 
-/* ------------------------------------------ */
+/* ---------------------------------------------------------------------- */
 /* Responsive design */
 /* For mini landscape devices */
-/* ------------------------------------------ */
+/* ---------------------------------------------------------------------- */
+body.miniLandscape,
+.miniLandscape .snap-scroll {
+  min-width: 600px;
+  min-height: 500px;
+}
 
 /* ---------------------------------------- */
 /* HEADER */
@@ -937,7 +930,6 @@ h3 {
 /* ---------------------------------------- */
 /* ABOUT ME */
 /* ---------------------------------------- */
-
 /* about content section */
 .miniLandscape .about-me__content {
   height: calc(100% - 3rem);
@@ -945,7 +937,6 @@ h3 {
   padding: 1.5rem;
   line-height: 1.1rem;
 }
-
 /* about (skills section) */
 .miniLandscape .about-me__skills .skills {
   grid-template-columns: repeat(5, 1fr);
@@ -954,12 +945,10 @@ h3 {
 /* ---------------------------------------- */
 /* Contact me */
 /* ---------------------------------------- */
-
 /* main contact card */
 .miniLandscape .contact__container {
   gap: 1rem;
 }
-
 .miniLandscape .contact__info .contact__para {
   width: 95%;
 }
@@ -967,26 +956,31 @@ h3 {
 /* ---------------------------------------- */
 /* Footer section */
 /* ---------------------------------------- */
-
 /* Contact Prompt Section Heading*/
 .miniLandscape .contact-prompt h2 {
   font-size: 1.2rem;
 }
 
-/* ------------------------------------------ */
+/* ---------------------------------------------------------------------- */
 /* Responsive design */
 /* For Tablet devices */
-/* ------------------------------------------ */
+/* ---------------------------------------------------------------------- */
+body.tablet,
+.tablet .snap-scroll {
+  min-width: 370px;
+  min-height: 370px;
+}
 
 /* ---------------------------------------- */
 /* SECTIONS */
 /* ---------------------------------------- */
-
 /* Sub heading */
-.tablet h2 {
+.tablet h2,
+.mobile h2 {
   font-size: 2.8rem;
 }
-.tablet h3 {
+.tablet h3,
+.mobile h3 {
   font-size: var(--sub-heading__tablet);
 }
 
@@ -994,19 +988,22 @@ h3 {
 .tablet .projects,
 .tablet .about-me,
 .tablet .contact,
-.tablet .footer {
-  height: calc(100% - var(--navbar-height__tablet));
-  padding-top: var(--navbar-height__tablet);
+.tablet .footer .mobile .main,
+.mobile .projects,
+.mobile .about-me,
+.mobile .contact,
+.mobile .footer {
+  height: calc(100% - var(--navbar-height__Portrait));
+  padding-top: var(--navbar-height__Portrait);
 }
 
 /* ---------------------------------------- */
 /* NAVIGATION PANEL */
 /* ---------------------------------------- */
-
-.tablet .navbar {
-  height: var(--navbar-height__tablet);
+.tablet .navbar,
+.mobile .navbar {
+  height: var(--navbar-height__Portrait);
 }
-
 .tablet .navbar__links {
   font-size: 1.1rem;
 }
@@ -1015,18 +1012,17 @@ h3 {
 /* SIDE STRIPS */
 /* ---------------------------------------- */
 .tablet .main__socials,
-.tablet .main__scroll {
+.tablet .main__scroll,
+.mobile .main__socials,
+.mobile .main__scroll {
   width: 1.5rem;
 }
-/* ---------------------------------------- */
 /* Socials bar left */
-/* ---------------------------------------- */
 .tablet .main__socials img {
   margin-top: 1.5em;
 }
-/* ---------------------------------------- */
 /* Socials bar right */
-/* ---------------------------------------- */
+.mobile .main__scroll span,
 .tablet .main__scroll span {
   font-size: 1.2rem;
 }
@@ -1034,8 +1030,9 @@ h3 {
 /* ---------------------------------------- */
 /* HEADER */
 /* ---------------------------------------- */
-.tablet .main__container {
-  margin-bottom: var(--navbar-height__tablet);
+.tablet .main__container,
+.mobile .main__container {
+  margin-bottom: var(--navbar-height__Portrait);
 }
 .tablet .main__info h6 {
   margin-right: 21.5rem;
@@ -1057,16 +1054,18 @@ h3 {
 /* ---------------------------------------- */
 /* main about card */
 .tablet .about-me__container {
-  height: 85%;
   width: 70%;
+  height: 85%;
   flex-direction: column;
 }
 /* about image section */
-.tablet .about-me__image {
+.tablet .about-me__image,
+.mobile .about-me__image {
   height: 42%;
   width: auto;
 }
-.tablet .about-me__image img {
+.tablet .about-me__image img,
+.mobile .about-me__image img {
   height: 100%;
   width: auto;
 }
@@ -1075,23 +1074,21 @@ h3 {
   height: calc(58% - 5rem);
   width: calc(100% - 5rem);
 }
-
 .tablet .about-me__splide .splide__arrow {
   font-size: 0.9rem;
 }
-.tablet .about-me__splide .splide__arrow img {
+.tablet .about-me__splide .splide__arrow img,
+.mobile .about-me__splide .splide__arrow img {
   width: 1.2rem;
 }
 
 /* ---------------------------------------- */
 /* Projects */
 /* ---------------------------------------- */
-
 /* main projects container */
 .tablet .projects__container {
   height: 80%;
 }
-
 /* projects card styling */
 .tablet .project-card {
   height: 85%;
@@ -1099,12 +1096,12 @@ h3 {
   margin: 7.5% 2.5%;
   border-radius: 0.7rem;
 }
-
-.tablet .project-card__title {
+.tablet .project-card__title,
+.mobile .project-card__title {
   font-size: 1.6rem;
 }
-
-.tablet .project-card__link {
+.tablet .project-card__link,
+.mobile .project-card__link {
   padding: 0.9rem 1.6rem;
   font-size: 1rem;
   font-weight: bold;
@@ -1114,88 +1111,65 @@ h3 {
 /* Contact me */
 /* ---------------------------------------- */
 /* main contact card */
-.tablet .contact__container {
+.tablet .contact__container,
+.mobile .contact__container {
   height: 80%;
   width: 70%;
   flex-direction: column;
 }
-
-.tablet .contact__info {
+.tablet .contact__info,
+.mobile .contact__info {
   width: 100%;
 }
-
-.tablet .contact__info .contact__links {
+.tablet .contact__info .contact__links,
+.mobile .contact__info .contact__links {
   width: 100%;
   flex-direction: row;
 }
-
 /* OR SEPARATOR */
-.tablet .or {
+.tablet .or,
+.mobile .or {
   font-size: 1rem;
 }
 /* CONTACT FORM CARD */
-.tablet .contact__card {
+.tablet .contact__card,
+.mobile .contact__card {
   width: 100%;
   flex: 2;
-  background-image: url("img/contact_bg__tablet.jpg");
+  background-image: url("img/contact_bg__portrait.jpg");
   margin-left: 0;
   border-radius: 0.7rem;
 }
-
-.tablet .contact__card h2 {
+.tablet .contact__card h2,
+.mobile .contact__card h2 {
   font-size: 1.8rem;
 }
-.tablet .contact-form button {
+.tablet .contact-form button,
+.mobile .contact-form button {
   padding: 0.8rem 1.5rem;
 }
 
 /* ---------------------------------------- */
 /* Footer section */
 /* ---------------------------------------- */
-
-.tablet .contact-prompt h2 {
+.tablet .contact-prompt h2,
+.mobile .contact-prompt h2 {
   font-size: 1.5rem;
 }
 
-/* ------------------------------------------ */
+/* ---------------------------------------------------------------------- */
 /* Responsive design */
 /* For Mobile devices */
-/* ------------------------------------------ */
-
-/* ---------------------------------------- */
-/* SECTIONS */
-/* ---------------------------------------- */
-
-/* Sub heading */
-.mobile h2 {
-  font-size: 2.8rem;
-}
-.mobile h3 {
-  font-size: var(--sub-heading__tablet);
-}
-
-.mobile .main,
-.mobile .projects,
-.mobile .about-me,
-.mobile .contact,
-.mobile .footer {
-  height: calc(100% - var(--navbar-height__tablet));
-  padding-top: var(--navbar-height__tablet);
+/* ---------------------------------------------------------------------- */
+body.mobile,
+.mobile .snap-scroll {
+  min-width: 250px;
+  min-height: 420px;
 }
 
 /* ---------------------------------------- */
 /* NAVIGATION PANEL */
 /* ---------------------------------------- */
-
-/* Common Styles */
-.mobile .navbar {
-  height: var(--navbar-height__tablet);
-}
-
-.mobile .navbar__container {
-  width: 92%;
-}
-
 .navbar__logo {
   height: 58%;
 }
@@ -1209,7 +1183,6 @@ h3 {
   cursor: pointer;
   display: none;
 }
-
 .mobile .navbar__hamburger-line1,
 .mobile .navbar__hamburger-line2,
 .mobile .navbar__hamburger-line3 {
@@ -1220,16 +1193,13 @@ h3 {
   margin-top: 20%;
   transition: all 0.3s ease-in-out;
 }
-
 .close .navbar__hamburger-line1 {
   transform: rotate(45deg) translate(20%, 200%);
   opacity: 1;
 }
-
 .close .navbar__hamburger-line2 {
   opacity: 0;
 }
-
 .close .navbar__hamburger-line3 {
   transform: rotate(-45deg) translate(20%, -240%);
   opacity: 1;
@@ -1241,6 +1211,7 @@ h3 {
   top: 0;
   right: -50%;
   height: 100vh;
+  height: 100dvh;
   width: 50%;
   background: rgba(0, 0, 0, 0.8);
   backdrop-filter: blur(2px) brightness(3.5);
@@ -1254,7 +1225,6 @@ h3 {
   width: 100%;
   display: flex;
   flex-direction: column;
-  /* justify-content: space-evenly; */
   gap: 5rem;
   margin-top: 10rem;
   align-items: center;
@@ -1262,14 +1232,12 @@ h3 {
 }
 
 .mobile-menu__links a {
-  color: white;
   text-decoration: none;
   font-size: 1.5rem;
   text-transform: uppercase;
-  opacity: 0.8;
+  opacity: var(--opacity-light);
   transition: opacity 0.3s ease-in-out;
 }
-
 .mobile-menu__links a:hover {
   opacity: 1;
 }
@@ -1278,11 +1246,9 @@ h3 {
 .mobile .navbar__list {
   display: none;
 }
-
 .mobile .navbar__hamburger {
   display: block;
 }
-
 .mobile .navbar__mobile-menu.active {
   right: 0;
 }
@@ -1292,28 +1258,12 @@ h3 {
 /* ---------------------------------------- */
 .mobile .main__socials,
 .mobile .main__scroll {
-  width: 1.5rem;
   min-width: 18px;
-}
-/* ---------------------------------------- */
-/* Socials bar left */
-/* ---------------------------------------- */
-.mobile .main__socials img {
-  margin-top: 1.5em;
-}
-/* ---------------------------------------- */
-/* Socials bar right */
-/* ---------------------------------------- */
-.mobile .main__scroll span {
-  font-size: 1.2rem;
 }
 
 /* ---------------------------------------- */
 /* HEADER */
 /* ---------------------------------------- */
-.mobile .main__container {
-  margin-bottom: var(--navbar-height__tablet);
-}
 .mobile .main__info h6 {
   font-size: 0.9rem;
   margin-right: 20.5rem;
@@ -1344,15 +1294,6 @@ h3 {
   width: 70%;
   flex-direction: column;
 }
-/* about image section */
-.mobile .about-me__image {
-  height: 42%;
-  width: auto;
-}
-.mobile .about-me__image img {
-  height: 100%;
-  width: auto;
-}
 /* about content section */
 .mobile .about-me__content {
   height: calc(58% - 4rem);
@@ -1365,7 +1306,6 @@ h3 {
 .mobile .about-me__work-experience h4 {
   margin: 0.8rem 0 0.4rem 0;
 }
-
 .mobile .about-me__work-experience ul li {
   margin-bottom: 0.2rem;
 }
@@ -1373,25 +1313,19 @@ h3 {
 .mobile .about-me__skills .skills {
   grid-template-columns: repeat(6, 1fr);
 }
-
 .mobile .about-me__splide .splide__arrow {
   font-size: 0.8rem;
-}
-.mobile .about-me__splide .splide__arrow img {
-  width: 1.2rem;
 }
 
 /* ---------------------------------------- */
 /* Projects */
 /* ---------------------------------------- */
-
 /* main projects container */
 .mobile .projects__container {
   height: 70%;
   width: 80%;
   margin-bottom: 10%;
 }
-
 /* projects card styling */
 .mobile .project-card {
   height: 85%;
@@ -1400,82 +1334,34 @@ h3 {
   border-radius: 0.7rem;
 }
 
-.mobile .project-card__title {
-  font-size: 1.6rem;
-}
-
-.mobile .project-card__link {
-  padding: 0.9rem 1.6rem;
-  font-size: 1rem;
-}
-
 /* ---------------------------------------- */
 /* Contact me */
 /* ---------------------------------------- */
 /* main contact card */
 .mobile .contact__container {
   margin-bottom: 10%;
-  height: 80%;
-  width: 70%;
-  flex-direction: column;
 }
-
-.mobile .contact__info {
-  width: 100%;
-}
-
 .mobile .contact__info h2 {
   margin-bottom: 1rem;
 }
-
 .mobile .contact__info .contact__para {
   width: 100%;
 }
-
 .mobile .contact__info .contact__links {
-  width: 100%;
   margin: 0.5rem;
-  flex-direction: row;
   flex-wrap: wrap;
-}
-
-/* OR SEPARATOR */
-.mobile .or {
-  font-size: 1rem;
-}
-/* CONTACT FORM CARD */
-.mobile .contact__card {
-  width: 100%;
-  flex: 2;
-  background-image: url("img/contact_bg__tablet.jpg");
-  margin-left: 0;
-  border-radius: 0.7rem;
-}
-
-.mobile .contact__card h2 {
-  font-size: 1.8rem;
-}
-.mobile .contact-form button {
-  padding: 0.8rem 1.5rem;
 }
 
 /* ---------------------------------------- */
 /* Footer section */
 /* ---------------------------------------- */
-
-.mobile .contact-prompt h2 {
-  font-size: 1.5rem;
-}
-
 .mobile .footer__container {
   width: calc(100% - 12%);
   padding: 8% 6%;
 }
-
 .mobile .footer__top {
   flex-wrap: wrap;
 }
-
 .mobile .footer__col:first-of-type {
   min-width: 100%;
 }
