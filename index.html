@@ -477,9 +477,13 @@
 
     <script>
         window.addEventListener("load", function () {
+            const socials = document.getElementById("socials");
+            const scrolls = document.getElementById("scrolls");
             const loading = document.getElementById('loading');
             loading.classList.add('hide-loading');
             setTimeout(() => {
+                socials.style.display = 'flex';
+                socials.style.display = 'flex';
                 loading.style.display = 'none';
             }, 1000); // Optionally remove the loading after the fade-out transition
         });

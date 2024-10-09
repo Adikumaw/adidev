@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
     focus: "center",
     arrows: false,
     autoplay: "true",
-    interval: 4000,
+    interval: 10000,
     cover: true,
     type: "loop",
   }).mount();
@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
     type: "loop",
     pagination: false,
     autoplay: "true",
-    interval: 5000,
+    interval: 10000,
   }).mount();
 
   // Function to update perPage based on body class
