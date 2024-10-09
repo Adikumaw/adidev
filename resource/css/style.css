@@ -377,7 +377,8 @@ h3 {
   place-items: center;
 }
 .about-me__image img {
-  width: 100%;
+  max-width: 100%;
+  max-height: 100%;
 }
 /* about content section */
 .about-me__content {
@@ -1114,11 +1115,6 @@ body.tablet,
 .tablet .about-me__image,
 .mobile .about-me__image {
   height: 42%;
-  width: auto;
-}
-.tablet .about-me__image img,
-.mobile .about-me__image img {
-  height: 100%;
   width: auto;
 }
 /* about content section */
