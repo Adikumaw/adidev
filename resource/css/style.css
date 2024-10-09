@@ -767,6 +767,8 @@ h3 {
 }
 
 .contact-form button {
+  display: flex;
+  align-items: center;
   padding: 0.75rem 1.3rem;
   text-decoration: none;
   background: none;
@@ -778,12 +780,62 @@ h3 {
   cursor: pointer;
   opacity: 0.7;
   transition: all 0.3s ease-in-out;
+  position: relative;
 }
-
 .contact-form button:hover {
   opacity: 1;
 }
+#submit_button .btn-text {
+  display: inline-block;
+  transition: all 0.3s ease;
+}
 
+#submit_button .loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 2px solid var(--color-purple);
+  border-top: 2px solid transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  display: none;
+}
+
+#submit_button.loading .loader {
+  display: block;
+}
+
+#submit_button.loading .btn-text {
+  visibility: hidden;
+}
+
+@keyframes spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+#submit_button.success .btn-text::after {
+  content: " ✓";
+  font-size: inherit;
+  margin-left: 0.2rem;
+  color: var(--color-purple);
+  transition: opacity 0.3s ease;
+}
+
+#submit_button.failed .btn-text::after {
+  content: " ✗";
+  font-size: inherit;
+  margin-left: 0.2rem;
+  color: red;
+  transition: opacity 0.3s ease;
+}
 /* ---------------------------------------- */
 /* Footer section */
 /* ---------------------------------------- */
