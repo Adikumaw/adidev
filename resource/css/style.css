@@ -45,10 +45,6 @@ body {
   position: relative;
 }
 
-.splide__arrow {
-  z-index: auto !important;
-}
-
 /* Sub heading */
 h2 {
   letter-spacing: 0.3rem;
