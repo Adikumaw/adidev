@@ -8,35 +8,30 @@ function adjustLayout() {
   const height = window.innerHeight;
   const ratio = width / height;
 
-  const landscapeRatio = 16 / 9; // Example landscape ratio
-  const miniLandscapeRatio = 4 / 3; // Example mini landscape ratio
-  const tabletRatio = 4 / 4; // Example tablet ratio
-  const mobileRatio = 3 / 5; // Example mobile ratio
+  const landscapeRatio = 16 / 9; // landscape ratio
+  const miniLandscapeRatio = 4 / 3; // mini landscape ratio
+  const tabletRatio = 4 / 4; // tablet ratio
+  const mobileRatio = 3 / 5; // mobile ratio
 
   body.classList.remove("miniLandscape", "tablet", "mobile");
 
   if (ratio >= landscapeRatio + 0.4) {
-    console.log("Landscape ratio with wider width");
     const newWidth = height * landscapeRatio;
     body.style.width = `${newWidth}px`;
 
     document.documentElement.style.fontSize = "clamp(12px, 1.8vw, 2.3vh)";
   } else if (ratio < miniLandscapeRatio && ratio >= tabletRatio) {
-    console.log("mini Landscape ratio");
     body.classList.add("miniLandscape");
 
     document.documentElement.style.fontSize = "clamp(12px, 1.8vw, 2.3vh)";
   } else if (ratio < tabletRatio && ratio >= mobileRatio) {
-    console.log("tablet ratio");
     body.classList.add("tablet");
     document.documentElement.style.fontSize = "clamp(10px, 2.1vw, 1.5vh)";
   } else if (ratio < mobileRatio) {
-    console.log("mobile ratio");
     body.classList.add("mobile");
 
     document.documentElement.style.fontSize = "clamp(6px, 2.8vw, 1.4vh)";
   } else {
-    console.log("Landscape ratio");
     body.style.width = "100%";
     body.style.marginLeft = "0";
     body.style.marginRight = "0";
@@ -50,8 +45,24 @@ window.addEventListener("resize", adjustLayout);
 window.addEventListener("orientationchange", adjustLayout);
 adjustLayout(); // Initial call to adjust layout on page load
 
+function isTouchDevice() {
+  return "ontouchstart" in window || navigator.maxTouchPoints > 0;
+}
+
 /**
- * 2. Mobile Menu Control
+ * 2. Check if Touch Device
+ * Determines whether the device supports touch and adjusts UI interactions accordingly.
+ */
+if (isTouchDevice()) {
+  // Disable hover effects or adjust animations for touch devices
+  document.body.classList.add("touch-device");
+} else {
+  document.body.classList.remove("touch-device");
+  console.log("non touch devices-----------------");
+}
+
+/**
+ * 3. Mobile Menu Control
  * Handles the toggling of the mobile menu and closes the menu when clicking outside.
  */
 
@@ -81,7 +92,7 @@ document.addEventListener("click", function (event) {
 });
 
 /**
- * 3. Scroll Section Visibility Control
+ * 4. Scroll Section Visibility Control
  * Handles the visibility of scroll indicators (up/down arrows) based on the section in view.
  */
 
@@ -162,7 +173,7 @@ snapScrollElement.addEventListener("scroll", () => {
 });
 
 /**
- * 4. Section Scroll Control
+ * 5. Section Scroll Control
  * Handles the scrolling between sections when clicking the up/down arrows.
  */
 
@@ -210,7 +221,7 @@ scrollUp.addEventListener("click", () => {
 });
 
 /**
- * 5. Skills Section
+ * 6. Skills Section
  * Handles displaying information for each skill when its icon is clicked.
  */
 
