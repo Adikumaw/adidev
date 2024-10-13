@@ -325,6 +325,7 @@ h3 {
   opacity: 0.7;
   transition: all 0.3s ease-in-out;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .navbar__links:hover {
@@ -935,6 +936,7 @@ h3 {
   text-decoration: none;
   opacity: var(--opacity-light);
   transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .footer__col ul li:hover,
@@ -1298,6 +1300,7 @@ body.mobile,
   font-size: 1.5rem;
   text-transform: uppercase;
   opacity: var(--opacity-light);
+  cursor: pointer;
   transition: opacity 0.3s ease-in-out;
 }
 
