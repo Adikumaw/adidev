@@ -53,7 +53,7 @@ body {
 }
 
 /* disable touch device hover animations */
-body.touch-device .mobile-menu__links a:hover,
+/* body.touch-device .mobile-menu__links a:hover,
 body.touch-device .main__socials img:hover,
 body.touch-device .main__scroll .main__scroll--up.visible:hover,
 body.touch-device .main__scroll .main__scroll--down.visible:hover,
@@ -63,7 +63,7 @@ body.touch-device .contact-form button:hover,
 body.touch-device .contact-prompt h2:last-child:hover,
 body.touch-device .footer__col ul li a:hover {
   opacity: var(--opacity-light) !important;
-}
+} */
 
 /* Sub heading */
 h2 {
@@ -873,13 +873,12 @@ h3 {
   transition: all 0.3s ease;
 }
 
-.contact-prompt h2:last-child:hover {
-  opacity: 1;
+.contact-prompt h2:last-child {
+  color: var(--color-purple);
 }
 
-.contact-prompt a {
-  color: var(--color-purple);
-  text-decoration: none;
+.contact-prompt h2:last-child:hover {
+  opacity: 1;
 }
 
 .footer__container {
