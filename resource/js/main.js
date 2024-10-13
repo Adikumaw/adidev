@@ -51,10 +51,12 @@ function adjustLayout() {
 window.addEventListener("resize", adjustLayout);
 window.addEventListener("orientationchange", adjustLayout);
 adjustLayout(); // Initial call to adjust layout on page load
-
+// Call layout adjustment after proper loading
 window.addEventListener("load", function () {
   adjustLayout(); // Initial call to adjust layout
 });
+// Recheck and adjust the layout every 2 seconds (2000 milliseconds)
+setInterval(adjustLayout, 2000);
 
 function isTouchDevice() {
   return "ontouchstart" in window || navigator.maxTouchPoints > 0;
