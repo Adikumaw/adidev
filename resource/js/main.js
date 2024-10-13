@@ -4,6 +4,8 @@
  */
 function adjustLayout() {
   const body = document.body;
+  const socials = document.getElementById("socials");
+  const scrolls = document.getElementById("scrolls");
   const width = window.innerWidth;
   const height = window.innerHeight;
   const ratio = width / height;
@@ -18,24 +20,35 @@ function adjustLayout() {
   if (ratio >= landscapeRatio + 0.4) {
     const newWidth = height * landscapeRatio;
     body.style.width = `${newWidth}px`;
+    socials.style.marginLeft = `${(width - newWidth) / 2}px`;
+    scrolls.style.marginRight = `${(width - newWidth) / 2}px`;
 
     document.documentElement.style.fontSize = "clamp(12px, 1.8vw, 2.3vh)";
   } else if (ratio < miniLandscapeRatio && ratio >= tabletRatio) {
-    body.classList.add("miniLandscape");
-
+    body.style.width = `${width}px`;
+    socials.style.marginLeft = `0px`;
+    scrolls.style.marginRight = `0px`;
     document.documentElement.style.fontSize = "clamp(12px, 1.8vw, 2.3vh)";
+
+    body.classList.add("miniLandscape");
   } else if (ratio < tabletRatio && ratio >= mobileRatio) {
-    body.classList.add("tablet");
+    body.style.width = `${width}px`;
+    socials.style.marginLeft = `0px`;
+    scrolls.style.marginRight = `0px`;
     document.documentElement.style.fontSize = "clamp(10px, 2.1vw, 1.5vh)";
+
+    body.classList.add("tablet");
   } else if (ratio < mobileRatio) {
-    body.classList.add("mobile");
-
+    body.style.width = `${width}px`;
+    socials.style.marginLeft = `0px`;
+    scrolls.style.marginRight = `0px`;
     document.documentElement.style.fontSize = "clamp(6px, 2.8vw, 1.4vh)";
-  } else {
-    body.style.width = "100%";
-    body.style.marginLeft = "0";
-    body.style.marginRight = "0";
 
+    body.classList.add("mobile");
+  } else {
+    body.style.width = `${width}px`;
+    socials.style.marginLeft = `0px`;
+    scrolls.style.marginRight = `0px`;
     document.documentElement.style.fontSize = "clamp(12px, 1.8vw, 2.3vh)";
   }
 }
@@ -44,6 +57,10 @@ function adjustLayout() {
 window.addEventListener("resize", adjustLayout);
 window.addEventListener("orientationchange", adjustLayout);
 adjustLayout(); // Initial call to adjust layout on page load
+
+window.addEventListener("load", function () {
+  adjustLayout(); // Initial call to adjust layout
+});
 
 function isTouchDevice() {
   return "ontouchstart" in window || navigator.maxTouchPoints > 0;

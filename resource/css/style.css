@@ -35,13 +35,19 @@ body,
 }
 
 html {
-  scroll-behavior: smooth;
   display: flex;
   justify-content: center;
   background-color: var(--color-black);
+  height: 100vh;
+  /* height: 100dvh; */
+  width: 100vw;
+  width: 100dvw;
 }
 
 body {
+  background-image: url("img/main_bg.jpg");
+  background-size: cover;
+  background-position: center;
   position: relative;
 }
 
@@ -140,12 +146,11 @@ h3 {
 /* ---------------------------------------- */
 .main__socials,
 .main__scroll {
-  display: none;
+  display: flex;
   z-index: 1;
   position: fixed;
   height: 60%;
   width: 1.2rem;
-  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: end;
@@ -220,15 +225,10 @@ h3 {
 /* MAIN SCROLL WINDOW */
 /* ---------------------------------------- */
 .snap-scroll {
-  scroll-behavior: smooth;
-  background-image: url("img/main_bg.jpg");
-  background-size: cover;
-  background-position: center;
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
-  height: 100vh;
-  height: 100dvh;
   position: relative;
+  scroll-behavior: smooth;
 }
 
 /* ---------------------------------------- */
@@ -1056,7 +1056,8 @@ body.tablet,
 .tablet .projects,
 .tablet .about-me,
 .tablet .contact,
-.tablet .footer .mobile .main,
+.tablet .footer,
+.mobile .main,
 .mobile .projects,
 .mobile .about-me,
 .mobile .contact,
@@ -1113,7 +1114,6 @@ body.tablet,
   margin-left: 26.5rem;
 }
 .tablet .main__title {
-  /* margin-top: 0.8rem; */
   font-size: 1.4rem;
   margin-right: 15.5rem;
 }
@@ -1300,9 +1300,6 @@ body.mobile,
   text-transform: uppercase;
   opacity: var(--opacity-light);
   transition: opacity 0.3s ease-in-out;
-}
-.mobile-menu__links a:hover {
-  opacity: 1;
 }
 
 /* Mobile-Specific Styles */
