@@ -17,38 +17,32 @@ function adjustLayout() {
 
   body.classList.remove("miniLandscape", "tablet", "mobile");
 
+  body.style.height = `${height}px`;
+
   if (ratio >= landscapeRatio + 0.4) {
     const newWidth = height * landscapeRatio;
     body.style.width = `${newWidth}px`;
-    socials.style.marginLeft = `${(width - newWidth) / 2}px`;
-    scrolls.style.marginRight = `${(width - newWidth) / 2}px`;
 
     document.documentElement.style.fontSize = "clamp(12px, 1.8vw, 2.3vh)";
   } else if (ratio < miniLandscapeRatio && ratio >= tabletRatio) {
     body.style.width = `${width}px`;
-    socials.style.marginLeft = `0px`;
-    scrolls.style.marginRight = `0px`;
     document.documentElement.style.fontSize = "clamp(12px, 1.8vw, 2.3vh)";
 
     body.classList.add("miniLandscape");
   } else if (ratio < tabletRatio && ratio >= mobileRatio) {
     body.style.width = `${width}px`;
-    socials.style.marginLeft = `0px`;
-    scrolls.style.marginRight = `0px`;
     document.documentElement.style.fontSize = "clamp(10px, 2.1vw, 1.5vh)";
 
     body.classList.add("tablet");
   } else if (ratio < mobileRatio) {
     body.style.width = `${width}px`;
-    socials.style.marginLeft = `0px`;
-    scrolls.style.marginRight = `0px`;
+    body.style.height = `${height + 1}px`;
     document.documentElement.style.fontSize = "clamp(6px, 2.8vw, 1.4vh)";
 
     body.classList.add("mobile");
   } else {
     body.style.width = `${width}px`;
-    socials.style.marginLeft = `0px`;
-    scrolls.style.marginRight = `0px`;
+    body.style.height = `${height + 1}px`;
     document.documentElement.style.fontSize = "clamp(12px, 1.8vw, 2.3vh)";
   }
 }

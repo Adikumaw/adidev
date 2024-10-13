@@ -28,6 +28,7 @@
 
 body,
 .snap-scroll {
+  overflow: hidden;
   min-width: 700px;
   min-height: 400px;
   width: 100%;
@@ -38,7 +39,7 @@ html {
   display: flex;
   justify-content: center;
   background-color: var(--color-black);
-  height: 100vh;
+  /* height: 100vh; */
   /* height: 100dvh; */
   width: 100vw;
   width: 100dvw;
@@ -148,7 +149,7 @@ h3 {
 .main__scroll {
   display: flex;
   z-index: 1;
-  position: fixed;
+  position: absolute;
   height: 60%;
   width: 1.2rem;
   flex-direction: column;
@@ -1383,14 +1384,14 @@ body.mobile,
 /* main projects container */
 .mobile .projects__container {
   height: 70%;
-  width: 80%;
+  width: 100%;
   margin-bottom: 10%;
 }
 /* projects card styling */
 .mobile .project-card {
   height: 85%;
-  width: 88%;
-  margin: 7.5% 6%;
+  width: 70%;
+  margin: 7.5% 15%;
   border-radius: 0.7rem;
 }
 
