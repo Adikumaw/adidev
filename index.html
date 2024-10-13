@@ -56,19 +56,27 @@
                 <div class="navbar__hamburger-line3"></div>
             </div>
             <ul class="navbar__list">
-                <li class="navbar__links"><a href="#home">Home</a></li>
-                <li class="navbar__links"><a href="#about">About</a></li>
-                <li class="navbar__links"><a href="#projects">Projects</a></li>
-                <li class="navbar__links"><a href="#contact">Contact</a></li>
+                <li class="navbar__links"
+                    onclick="bringSection(0)">Home</li>
+                <li class="navbar__links"
+                    onclick="bringSection(1)">About</li>
+                <li class="navbar__links"
+                    onclick="bringSection(2)">Projects</li>
+                <li class="navbar__links"
+                    onclick="bringSection(3)">Contact</li>
             </ul>
             <!-- Mobile Menu -->
             <div class="navbar__mobile-menu"
                  id="mobileMenu">
                 <ul class="mobile-menu__list">
-                    <li class="mobile-menu__links"><a href="#home">Home</a></li>
-                    <li class="mobile-menu__links"><a href="#about">About</a></li>
-                    <li class="mobile-menu__links"><a href="#projects">Projects</a></li>
-                    <li class="mobile-menu__links"><a href="#contact">Contact</a></li>
+                    <li class="mobile-menu__links"
+                        onclick="bringSection(0)">Home</li>
+                    <li class="mobile-menu__links"
+                        onclick="bringSection(1)">About</li>
+                    <li class="mobile-menu__links"
+                        onclick="bringSection(2)">Projects</li>
+                    <li class="mobile-menu__links"
+                        onclick="bringSection(3)">Contact</li>
                 </ul>
             </div>
         </div>
@@ -444,10 +452,10 @@
                     <div class="footer__col">
                         <h4>Quick Links</h4>
                         <ul>
-                            <li><a href="#home">Home</a></li>
-                            <li><a href="#about">About</a></li>
-                            <li><a href="#projects">Projects</a></li>
-                            <li><a href="#contact">Contact</a></li>
+                            <li onclick="bringSection(0)">Home</li>
+                            <li onclick="bringSection(1)">About</li>
+                            <li onclick="bringSection(2)">Projects</li>
+                            <li onclick="bringSection(3)">Contact</li>
                         </ul>
                     </div>
 
@@ -477,8 +485,6 @@
 
     <script>
         window.addEventListener("load", function () {
-            const socials = document.getElementById("socials");
-            const scrolls = document.getElementById("scrolls");
             const loading = document.getElementById('loading');
             loading.classList.add('hide-loading');
             setTimeout(() => {

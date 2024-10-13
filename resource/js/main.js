@@ -4,8 +4,6 @@
  */
 function adjustLayout() {
   const body = document.body;
-  const socials = document.getElementById("socials");
-  const scrolls = document.getElementById("scrolls");
   const width = window.innerWidth;
   const height = window.innerHeight;
   const ratio = width / height;
@@ -18,31 +16,33 @@ function adjustLayout() {
   body.classList.remove("miniLandscape", "tablet", "mobile");
 
   body.style.height = `${height}px`;
+  body.style.width = `${width}px`;
 
-  if (ratio >= landscapeRatio + 0.4) {
-    const newWidth = height * landscapeRatio;
-    body.style.width = `${newWidth}px`;
-
-    document.documentElement.style.fontSize = "clamp(12px, 1.8vw, 2.3vh)";
-  } else if (ratio < miniLandscapeRatio && ratio >= tabletRatio) {
-    body.style.width = `${width}px`;
-    document.documentElement.style.fontSize = "clamp(12px, 1.8vw, 2.3vh)";
-
-    body.classList.add("miniLandscape");
-  } else if (ratio < tabletRatio && ratio >= mobileRatio) {
-    body.style.width = `${width}px`;
-    document.documentElement.style.fontSize = "clamp(10px, 2.1vw, 1.5vh)";
-
-    body.classList.add("tablet");
-  } else if (ratio < mobileRatio) {
-    body.style.width = `${width}px`;
+  // Mobile ratio...
+  if (ratio < mobileRatio) {
+    body.classList.add("mobile");
     body.style.height = `${height + 1}px`;
     document.documentElement.style.fontSize = "clamp(6px, 2.8vw, 1.4vh)";
-
-    body.classList.add("mobile");
-  } else {
-    body.style.width = `${width}px`;
+  }
+  // Tablet ratio...
+  else if (ratio < tabletRatio) {
+    body.classList.add("tablet");
     body.style.height = `${height + 1}px`;
+    document.documentElement.style.fontSize = "clamp(10px, 2.1vw, 1.5vh)";
+  }
+  // Mini-Landscape ratio...
+  else if (ratio < miniLandscapeRatio) {
+    body.classList.add("miniLandscape");
+    document.documentElement.style.fontSize = "clamp(12px, 1.8vw, 2.3vh)";
+  }
+  // Simple Landscape ratio
+  else if (ratio < landscapeRatio + 0.4) {
+    document.documentElement.style.fontSize = "clamp(12px, 1.8vw, 2.3vh)";
+  }
+  // UltraWide-Landscape ratio...
+  else {
+    const newWidth = height * landscapeRatio;
+    body.style.width = `${newWidth}px`;
     document.documentElement.style.fontSize = "clamp(12px, 1.8vw, 2.3vh)";
   }
 }
@@ -69,7 +69,6 @@ if (isTouchDevice()) {
   document.body.classList.add("touch-device");
 } else {
   document.body.classList.remove("touch-device");
-  console.log("non touch devices-----------------");
 }
 
 /**
@@ -230,6 +229,10 @@ scrollUp.addEventListener("click", () => {
     scrollToSection(sections[currentIndex - 1]);
   }
 });
+
+function bringSection(index) {
+  scrollToSection(sections[index]);
+}
 
 /**
  * 6. Skills Section

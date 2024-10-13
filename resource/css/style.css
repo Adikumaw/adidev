@@ -52,6 +52,19 @@ body {
   position: relative;
 }
 
+/* disable touch device hover animations */
+body.touch-device .mobile-menu__links a:hover,
+body.touch-device .main__socials img:hover,
+body.touch-device .main__scroll .main__scroll--up.visible:hover,
+body.touch-device .main__scroll .main__scroll--down.visible:hover,
+body.touch-device .navbar__links a:hover,
+body.touch-device .project-card__link:hover,
+body.touch-device .contact-form button:hover,
+body.touch-device .contact-prompt h2:last-child:hover,
+body.touch-device .footer__col ul li a:hover {
+  opacity: var(--opacity-light) !important;
+}
+
 /* Sub heading */
 h2 {
   letter-spacing: 0.3rem;
@@ -308,17 +321,13 @@ h3 {
   margin-left: 1.5rem;
   letter-spacing: var(--letter-spacing);
   text-transform: uppercase;
-}
-
-.navbar__links a {
-  text-decoration: none;
   color: var(--color-white);
   opacity: 0.7;
   transition: all 0.3s ease-in-out;
   font-weight: bold;
 }
-.navbar__links a:hover {
-  /* color: var(--color-purple); */
+
+.navbar__links:hover {
   opacity: 1;
 }
 
@@ -919,6 +928,7 @@ h3 {
   margin-bottom: 0.5rem;
 }
 
+.footer__col ul li,
 .footer__col ul li a {
   display: flex;
   align-items: center;
@@ -927,6 +937,7 @@ h3 {
   transition: all 0.3s ease;
 }
 
+.footer__col ul li:hover,
 .footer__col ul li a:hover {
   opacity: 1;
 }
@@ -1021,18 +1032,6 @@ body.miniLandscape,
 /* Responsive design */
 /* For Tablet devices */
 /* ---------------------------------------------------------------------- */
-
-body.touch-device .mobile-menu__links a:hover,
-body.touch-device .main__socials img:hover,
-body.touch-device .main__scroll .main__scroll--up.visible:hover,
-body.touch-device .main__scroll .main__scroll--down.visible:hover,
-body.touch-device .navbar__links a:hover,
-body.touch-device .project-card__link:hover,
-body.touch-device .contact-form button:hover,
-body.touch-device .contact-prompt h2:last-child:hover,
-body.touch-device .footer__col ul li a:hover {
-  opacity: var(--opacity-light);
-}
 
 body.tablet,
 .tablet .snap-scroll {
@@ -1295,12 +1294,15 @@ body.mobile,
   height: 100%;
 }
 
-.mobile-menu__links a {
-  text-decoration: none;
+.mobile-menu__links {
   font-size: 1.5rem;
   text-transform: uppercase;
   opacity: var(--opacity-light);
   transition: opacity 0.3s ease-in-out;
+}
+
+.mobile-menu__links:hover {
+  opacity: 1;
 }
 
 /* Mobile-Specific Styles */
